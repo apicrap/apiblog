@@ -1,0 +1,10 @@
+---
+---
+<article id={{page.id}}>
+    <h2 id=post-heading-{{page.id}}>{{ page.title | capitalize }}</h2>
+    <p class="post-author">{{ page.time }} - Autor: {{ page.author | capitalize }}</p>
+    {% if page.hero %}
+    <img class="hero-image" src="{{page.hero}}">
+    {% endif %}
+    <p>{{content}}</p>
+</article>

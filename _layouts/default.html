@@ -1,0 +1,39 @@
+---
+blog_heading: Kärjetänava lood &#128029;
+---
+
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="apicrap">
+    <meta name="developer" content="devKarin">
+    <!--<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">-->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="stylesheet" href={{ "/assets/css/style.css" | relative_url }}>
+</head>
+
+<body>
+    {% include navigation.html %}
+    <main id="blog-main">
+        <h1 id="blog-heading">Kärjetänava lood</h1>
+        <div class="blog-description">
+            <p>Blogi algajalt mesinikult algajale mesinikule.</p>
+            <p>See ajaveeb sündis minu mesindusõpingute käigus. Algajana oli mul palju küsimusi, millele vastust otsisin
+                ja arvan, et olles mõned vastused nüüd leidnud, teen teiste algajate elu oma teadmiste ja kogemuste
+                jagamisega mitu sammu lihtsamaks.</p>
+            <p>Head sirvimist!</p>
+        </div>
+        <div id="blog-content" class="content">
+            {{ content }}
+            {% include sidebar.html %}
+        </div>
+    </main>
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
+
+</html>
