@@ -17,7 +17,8 @@ article p {
     margin-bottom: 1rem;
 }
 
-p.post-author {
+.post-metadata p,
+.post-metadata a {
     font-size: 0.9rem;
     font-weight: lighter;
     font-style: italic;

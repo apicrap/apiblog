@@ -8,14 +8,14 @@
     <meta name="author" content="apicrap">
     <meta name="developer" content="devKarin">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml" target="_blank">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}assets/favicon/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
     <!--<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">-->
     <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
     {% if jekyll.environment == "production" %}
-    <script src="/assets/js/google_analytics_script.js"></script>
+    <script src="{{ site.baseurl }}assets/js/google_analytics_script.js"></script>
     {% endif %}
 </head>
 
