@@ -79,7 +79,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(103px, max-content) fit-content(100vh) minmax(61px, max-content);
+    grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
     grid-template-areas:
         'header-area'
         'main'
@@ -88,7 +88,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     body {
-        grid-template-rows: minmax(103px, max-content) fit-content(100vh) minmax(61px, max-content);
+        grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
         grid-template-areas:
             'header-area'
             'main'

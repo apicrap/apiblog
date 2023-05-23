@@ -6,7 +6,7 @@ categories: mesilased
 tags:
 ---
 
-![Mesilane enelase õiel]({{site.baseurl}}assets/images/mesilane1.webp){: class="post-image-regular"}<br>
+![Mesilane enelase õiel]({{site.baseurl}}assets/images/mesilane1.webp){: class="post-image-regular" width="640" height="360"}<br>
 
 Kas poleks mitte silmapaistev kui saad üks hetk, kes teab mis põhjustel sa sinna sattunud oled, seltskonnas uhkeldada sellega, et sinu lemmikloomal on 3 paari jalgu ja ta oskab lennata ja, et tegelikkuses on neid lemmikuid sul kümneid kuni sadu tuhandeid. Tähelepanu ning küsivad silmapaarid on garanteeritud.<br>
 
@@ -15,6 +15,6 @@ Vaatamata suurele hulgale isenditele on minu meelest mesilased palju lihtsamini 
 Okei, tegelikult on see kõik kordades nüansirikkam, kuid miski ei ületa boonuseid, mis mesilaste pidamisega kaasnevad. Olgu selleks siis meeldivad aroomid vastukaaluks toas lebavale kassi liivakastile, ning meelehea kogutud mee näol. Lisaks on mesilastest palju kasu taimede tolmeldamisel, misläbi tõuseb erinevate viljade saagikus ning säilib elurikkus.<br>
 Kas mõnel teisel koduloomal on veel nii palju häid omadusi?  Mulle hetkel ei meenu.<br>
 
-![Mesilane enelase õisikul]({{site.baseurl}}assets/images/mesilane2.webp){: class="post-image-regular"}<br>
+![Mesilane enelase õisikul]({{site.baseurl}}assets/images/mesilane2.webp){: class="post-image-regular" width="640" height="360"}<br>
 
 Järgmises postituses vaatame lähemalt, kes need mesilased täpsemalt on. Mis on nende elutegevuse moto ning millised on nende eluaseme sisustamise võimalused.<br>
