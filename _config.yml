@@ -31,10 +31,10 @@ defaults:
   #  values:
   #    is_post: false
   #    layout: default
-  - scope:
-      path: "assets/images"
-    values:
-      image: true
+  # - scope:
+  #    path: "assets/images"
+  #  values:
+  #    image: true
 include: [_pages]
 markdown: kramdown
 
