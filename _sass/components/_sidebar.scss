@@ -1,0 +1,67 @@
+.dark-mode #sidebar {
+    background-color: rgb(77, 129, 122);
+    border: 1px solid rgb(235, 235, 145);
+}
+
+#sidebar {
+    background-color: rgb(247, 244, 222);
+    padding: 1rem;
+    border: 1px solid rgb(25, 66, 78);
+    border-radius: 5px;
+    height: max-content;
+    max-height: calc(100vh - 207px);
+    width: 20%;
+    position: fixed;
+    top: 125px;
+    right: 2rem;
+    overflow-y: auto;
+    /*z-index: 1;*/
+}
+
+#sidebar h3 {
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.dark-mode #sidebar h3 {
+    color: rgb(17, 17, 32);
+}
+
+#sidebar ol {
+    margin-bottom: 8px;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#sidebar li,
+#sidebar a {
+    color: rgb(25, 66, 78);
+    transition: all 0.12s ease-in-out;
+}
+
+.dark-mode #sidebar li,
+.dark-mode #sidebar a {
+    color: rgb(245, 244, 242);
+}
+
+#sidebar li.active,
+#sidebar li.active a {
+    color: rgb(196, 70, 43);
+}
+
+.dark-mode #sidebar li.active,
+.dark-mode #sidebar li.active a {
+    color: rgb(235, 176, 57);
+}
+
+.dark-mode #sidebar li:hover,
+.dark-mode #sidebar a:hover {
+    font-size: 1.1rem;
+    color: rgb(235, 235, 145);
+}
+
+#sidebar a:hover,
+#sidebar li:hover {
+    font-size: 1.1rem;
+}
