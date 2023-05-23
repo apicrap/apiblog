@@ -1,0 +1,160 @@
+<script>
+    const main = document.querySelector("main");
+    const sidebar = document.getElementById("sidebar");
+    const initialSidebarHeight = window.getComputedStyle(sidebar).height;
+    const backToTopButton = document.getElementById("go-to-top");
+
+
+    window.addEventListener("load", addScrollListener, false);
+    window.removeEventListener("unload", addScrollListener);
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(listElements => {
+            listElements.forEach(element => {
+                const id = element.target.getAttribute("id");
+                if (element.intersectionRatio > 0) {
+                    document.querySelector(`a[href="#${id}"]`).parentElement.classList.add("active");
+                } else {
+                    document.querySelector(`a[href="#${id}"]`).parentElement.classList.remove("active");
+                }
+            });
+        });
+
+        document.querySelectorAll("article[id]").forEach((article) => {
+            observer.observe(article);
+        });
+    });
+
+    function addScrollListener() {
+        window.addEventListener("scroll", () => showScrollProgress(), true);
+        return window.removeEventListener("scroll", showScrollProgress);
+    }
+
+    function showBackToTopButton() {
+        backToTopButton.style.display = "block";
+    }
+
+    function hideBackToTopButton() {
+        backToTopButton.style.display = "none";
+    }
+
+    function showScrollProgress() {
+        let windowToScroll = main.scrollTop;
+        let scrolledHeight = main.scrollHeight - main.clientHeight;
+        let scrolledPercent = (windowToScroll / scrolledHeight) * 100;
+        const sidebarHeight = sidebar
+
+        if (scrolledPercent > 1) {
+            showBackToTopButton();
+        } else {
+            hideBackToTopButton();
+        }
+
+        if (scrolledPercent > 3) {
+            adjustSidebarHeightAndPosition();
+        } else {
+            resetSidebarHeightAndPosition()
+        }
+
+        document.getElementById("progress-bar").style.width = scrolledPercent + "%";
+    }
+
+    function darkMode() {
+        document.body.classList.toggle("dark-mode");
+        let currentMode = document.getElementById("mode-switch");
+        currentMode.classList.toggle("dark-mode");
+        if (currentMode.className == "dark-mode") {
+            document.getElementById("mode-switch").innerHTML = "&#127774;";
+        } else {
+            document.getElementById("mode-switch").innerHTML = "&#127769;";
+        }
+    }
+
+    function goBackToTop() {
+        main.scrollTop = 0;
+    }
+
+    function showSidebar() {
+        sidebar.classList.toggle("visible");
+    }
+
+    function adjustSidebarHeightAndPosition() {
+        sidebar.style.top = "125px";
+        //sidebar.style.height = "calc(100vh - 205px - 3rem)";
+    }
+
+    function resetSidebarHeightAndPosition() {
+        sidebar.style.top = "125px";
+        sidebar.style.height = initialSidebarHeight;
+    }
+</script>
+<script>
+    function startComparing() {
+        let overlays = document.getElementsByClassName("comparison-overlay");
+        for (let i = 0; i < overlays.length; i++) {
+            compareImages(overlays[i]);
+        }
+
+        function compareImages(img) {
+            let sliderClicked = 0;
+
+            let imageWidth = img.offsetWidth;
+            let imageHeight = img.offsetHeight;
+
+            img.style.width = (imageWidth / 2) + "px";
+
+            let slider = document.createElement("DIV");
+            slider.setAttribute("class", "image-comparison-slider");
+            img.parentElement.insertBefore(slider, img);
+
+            slider.style.top = (imageHeight / 2) - (slider.offsetHeight / 2) + "px";
+            slider.style.left = (imageWidth / 2) - (slider.offsetWidth / 2) + "px";
+
+            slider.addEventListener("mousedown", sliderBegin);
+            window.addEventListener("mouseup", sliderStop);
+            slider.addEventListener("touchstart", sliderBegin);
+            window.addEventListener("touchend", sliderStop);
+
+            function sliderBegin(event) {
+                event.preventDefault();
+                sliderClicked = 1;
+
+                window.addEventListener("mousemove", sliderMove);
+                window.addEventListener("touchmove", sliderMove);
+            }
+
+            function sliderStop() {
+                sliderClicked = 0;
+            }
+
+            function sliderMove(event) {
+                let sliderPosition;
+
+                if (sliderClicked == 0) return false;
+                sliderPosition = getCursorPosition(event);
+                if (sliderPosition < 0) sliderPosition = 0;
+                if (sliderPosition > imageWidth) sliderPosition = imageWidth;
+
+                slide(sliderPosition);
+            }
+
+            function getCursorPosition(event) {
+                let cursorPositionX = 0;
+
+                event = (event.changedTouches) ? event.changedTouches[0] : event;
+                let imagePositionX = img.getBoundingClientRect();
+
+                cursorPositionX = event.pageX - imagePositionX.left;
+                cursorPositionX = cursorPositionX - window.pageXOffset;
+                return cursorPositionX;
+            }
+
+            function slide(cursorPositionX) {
+                img.style.width = cursorPositionX + "px";
+                slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+            }
+        }
+    }
+
+    startComparing();
+</script>

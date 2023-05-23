@@ -26,7 +26,14 @@ body {
     overflow-y: hidden;
 }
 
-header,
+header {
+    background-image: url("/assets/images/third.webp");
+    background-size: contain;
+    background-clip: padding-box;
+    background-repeat: repeat-x;
+    background-color: rgb(49, 85, 97);
+}
+
 footer {
     background-color: rgb(49, 85, 97);
 }
@@ -44,12 +51,14 @@ a {
     color: rgb(196, 70, 43);
 }
 
+/* Not needed */
 header a,
 .dark-mode header a {
     color: (235, 228, 165);
     font-size: 3.4rem;
 }
 
+/* Not needed */
 header a:hover,
 .dark-mode header a:hover {
     color: rgb(104, 130, 116);
@@ -64,7 +73,7 @@ footer {
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 2rem;
 }
 
@@ -81,6 +90,10 @@ footer p {
     padding: 0 0 0 5rem;
 }
 
+/* h1 {
+    text-shadow: 2px 2px 5px rgb(255, 196, 0);
+} */
+
 h1,
 h2 {
     text-align: center;
@@ -90,7 +103,6 @@ h2 {
 
 h2 {
     margin-bottom: 1.2rem;
-    color: rgb(25, 66, 78);
 }
 
 h3,
@@ -117,24 +129,29 @@ h4 {
 }
 
 #mode-switch {
-    background-color: rgb(49, 85, 97);
+    background-color: rgb(72, 197, 124);
     font-size: 3rem;
     border-radius: 50%;
     cursor: pointer;
 }
 
-#rss-feed-link {
+/* #rss-feed-link {
     color: rgb(196, 70, 43);
     font-size: 3.4rem;
-}
+} */
 
 .scroll-progress-container {
     width: 100%;
-    background-color: rgb(49, 85, 97);
+    /*background-color: rgb(49, 85, 97);*/
+    /* background-image: linear-gradient(140deg, rgb(234, 222, 219) 0%, rgb(188, 112, 164) 50%, rgb(191, 214, 65) 75%); */
+    background-image: linear-gradient(140deg, rgb(234, 222, 219) 0%, rgb(188, 112, 164) 50%, rgb(243, 241, 130) 75%);
 }
 
 .scroll-progress-bar {
-    background-color: rgb(49, 85, 97);
+    background-image: linear-gradient(140deg, rgb(160, 130, 243) 0%, rgb(117, 212, 219) 50%, rgb(243, 241, 130) 75%);
+    /*background-color: rgb(240, 238, 138);*/
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
     width: 0%;
     text-align: left;
     transform: scaleX(-1);
@@ -143,7 +160,7 @@ h4 {
 
 #flower {
     text-align: left;
-    background-color: rgb(49, 85, 97);
+    background-color: rgb(243, 241, 130);
     font-size: 32px;
 }
 
@@ -168,7 +185,7 @@ h4 {
     width: 20%;
     position: fixed;
     top: 20rem;
-    right: 1rem;
+    right: 2rem;
     overflow-y: auto;
 }
 
@@ -267,11 +284,38 @@ article p {
 }
 
 img {
-    max-width: 10rem;
+    border: 2px solid rgb(149, 129, 185);
+}
+
+img.post-image-regular {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    transition: width 1s ease-in;
+}
+
+img.post-image-regular:hover {
+    width: 30%
+}
+
+img.hero-image {
+    width: 100%;
 }
 
 p {
     font-size: 1.2rem;
+}
+
+p.post-author {
+    font-size: 0.9rem;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+}
+
+#mesi {
+    border-radius: 8px;
 }
 
 /*
@@ -306,8 +350,8 @@ body {
         grid-template-columns: 40px auto auto auto 40px;
         grid-template-rows: 5vh 5vh 40px;
         grid-template-areas:
-            ". homepage rss mode-switch-wrapper ."
-            ". homepage rss mode-switch-wrapper ."
+            ". . . mode-switch-wrapper ."
+            ". . . mode-switch-wrapper ."
             "progress-bar progress-bar progress-bar progress-bar flower";
     }
 
@@ -320,6 +364,10 @@ body {
             "copyright copyright copyright copyright copyright";
     }
 
+    img.post-image-regular {
+        width: 100%;
+    }
+
     #post-4-table {
         font-size: 0.8rem;
     }
@@ -328,14 +376,15 @@ body {
         padding: 0 0.8rem 0 1.5rem;
     }
 
+    /* Not needed */
     header a,
     .dark-mode header a {
         font-size: 2.5rem;
     }
 
-    #rss-feed-link {
+    /* #rss-feed-link {
         font-size: 2.5rem;
-    }
+    } */
 
     #mode-switch {
         font-size: 2.5rem;
@@ -350,7 +399,7 @@ body {
         grid-template-columns: 40px auto auto auto 10% 14% 40px;
         grid-template-rows: 10vh 40px;
         grid-template-areas:
-            ". homepage . . rss mode-switch-wrapper ."
+            ". . . . . mode-switch-wrapper ."
             "progress-bar progress-bar progress-bar progress-bar progress-bar progress-bar flower";
     }
 
@@ -383,21 +432,17 @@ footer {
     grid-area: go-to-top;
 }
 
-#homepage-link {
+/* #homepage-link {
     grid-area: homepage;
-}
+}*/
 
 #mode-switch-wrapper {
     grid-area: mode-switch-wrapper;
 }
 
-#rss-feed-link {
+/* #rss-feed-link {
     grid-area: rss;
-}
-
-#blog-link {
-    grid-area: rss;
-}
+} */
 
 .scroll-progress-container {
     grid-area: progress-bar;

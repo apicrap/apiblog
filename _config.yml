@@ -1,0 +1,77 @@
+# General
+title: apiblog
+description: >- # this means to ignore newlines until "baseurl:"
+  Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste lõputult huvitavat maailma koos avastada.
+github_username: apicrap
+# Serving
+domain: apicrap.github.io
+url: "https://apicrap.github.io/" # http://127.0.0.1:4000/apiblog/
+baseurl: "/apiblog/"
+
+# Outputting
+timezone: Europe/Tallinn
+
+# Build settings
+theme: null
+sass:
+  sass_dir: _sass
+  style: expanded
+  #load_paths:
+  #- "."
+defaults:
+  - scope:
+      path: _posts # "" means all files in the project
+      type: "posts"
+    values:
+      is_post: true
+      layout: "post"
+  #- scope:
+  #    type: pages
+  #    path: _pages
+  #  values:
+  #    is_post: false
+  #    layout: default
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+include: [_pages]
+markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Conversion
+excerpt_separator: ""
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+#exclude:
+#  - .sass-cache/
+#  - .jekyll-cache/
+#  - gemfiles/
+#  - Gemfile
+#  - Gemfile.lock
+#  - node_modules/
+#  - vendor/bundle/
+#  - vendor/cache/
+#  - vendor/gems/
+#  - vendor/ruby/
+
+# For GitHub Pages
+lsi: false
+safe: true
+source: "/" # [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge

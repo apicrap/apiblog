@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="apicrap">
+    <meta name="developer" content="devKarin">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml" target="_blank">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">-->
+    <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
+    {% if jekyll.environment == "production" %}
+    <script src="/assets/js/google_analytics_script.js"></script>
+    {% endif %}
+</head>
+
+<body>
+    {% include navigation.html %}
+    <main id="blog-main">
+        <div class="blog-description">
+            <h1 id="blog-heading">Blogist</h1>
+            <p>Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda
+                kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid
+                tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste
+                lõputult huvitavat maailma koos avastada.</p>
+            <p>Head sirvimist!</p>
+        </div>
+        <div id="blog-content" class="content">
+            {{ content }}
+            {% include sidebar.html %}
+        </div>
+    </main>
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
+
+</html>

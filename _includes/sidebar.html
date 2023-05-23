@@ -1,0 +1,10 @@
+<div id="sidebar-container">
+    <div id="sidebar">
+        <h3>Sisukord</h3>
+        <ol id="sidebar-list">
+            {% for post in site.posts %}
+            <li class="" value={{post.id}}><a href=#{{post.id}}>{{post.title}}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>

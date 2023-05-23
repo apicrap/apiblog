@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <title>{{ site.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="apicrap">
+    <meta name="developer" content="devKarin">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">-->
+    <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
+    {% if jekyll.environment == "production" %}
+    <script src="my-analytics-script.js"></script>
+    {% endif %}
+</head>
+
+<body>
+    {% include navigation.html %}
+    <main id="blog-main">
+        <div class="blog-description">
+            {{ content }}
+        </div>
+        <div id="blog-content" class="content">
+            {% include sidebar.html %}
+        </div>
+    </main>
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
+
+</html>
