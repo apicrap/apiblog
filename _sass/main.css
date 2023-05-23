@@ -134,7 +134,8 @@ article p {
   margin-bottom: 1rem;
 }
 
-p.post-author {
+.post-metadata p,
+.post-metadata a {
   font-size: 0.9rem;
   font-weight: lighter;
   font-style: italic;
@@ -284,7 +285,7 @@ html {
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   overflow-y: hidden;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .blog-description p {
