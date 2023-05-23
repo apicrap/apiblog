@@ -1,47 +1,49 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
+# General
 title: apiblog
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://apicrap.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ""
+  Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste lõputult huvitavat maailma koos avastada.
 github_username: apicrap
+# Serving
+domain: apicrap.github.io
+url: "https://apicrap.github.io/" # http://127.0.0.1:4000/apiblog/
+baseurl: "/apiblog/"
 
+# Outputting
 timezone: Europe/Tallinn
+
 # Build settings
-theme: null # minima
+theme: null
 sass:
   sass_dir: _sass
+  style: expanded
+  #load_paths:
+  #- "."
 defaults:
   - scope:
-      path: "" # means all files in the project
+      path: _posts # "" means all files in the project
       type: "posts"
     values:
+      is_post: true
       layout: "post"
+  #- scope:
+  #    type: pages
+  #    path: _pages
+  #  values:
+  #    is_post: false
+  #    layout: default
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+include: [_pages]
 markdown: kramdown
+
+# Plugins
 plugins:
   - jekyll-feed
+
+# Conversion
+excerpt_separator: ""
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -50,14 +52,26 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+#exclude:
+#  - .sass-cache/
+#  - .jekyll-cache/
+#  - gemfiles/
+#  - Gemfile
+#  - Gemfile.lock
+#  - node_modules/
+#  - vendor/bundle/
+#  - vendor/cache/
+#  - vendor/gems/
+#  - vendor/ruby/
+
+# For GitHub Pages
+lsi: false
+safe: true
+source: "/" # [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
