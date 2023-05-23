@@ -285,7 +285,7 @@ html {
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   overflow-y: hidden;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .blog-description p {
@@ -371,13 +371,15 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: minmax(103px, max-content) fit-content(100vh) minmax(61px, max-content);
+  grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
+  grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
   grid-template-areas: "header-area" "main" "footer-area";
 }
 
 @media only screen and (max-width: 768px) {
   body {
-    grid-template-rows: minmax(103px, max-content) fit-content(100vh) minmax(61px, max-content);
+    grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
+    grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
     grid-template-areas: "header-area" "main" "footer-area";
   }
   header {
