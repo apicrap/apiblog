@@ -6,7 +6,7 @@ github_username: apicrap
 # Serving
 domain: apicrap.github.io
 url: "https://apicrap.github.io/" # http://127.0.0.1:4000/apiblog/
-baseurl: "/apiblog/"
+baseurl: "/apiblog/" # ""
 
 # Outputting
 timezone: Europe/Tallinn
@@ -67,7 +67,7 @@ excerpt_separator: ""
 # For GitHub Pages
 lsi: false
 safe: true
-source: "/" # [your repo's top level directory]
+source: ""
 incremental: false
 highlighter: rouge
 gist:
