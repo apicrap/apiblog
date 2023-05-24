@@ -1,5 +1,5 @@
 <header class="dark-geen-bg">
-    <a id="homepage-link" href="/#blog-heading">
+    <a id="homepage-link" href="{{site.baseurl}}#blog-heading">
         <span class="letter">K</span>
         <span class="letter">ä</span>
         <span class="letter">r</span>
@@ -11,13 +11,14 @@
         <span class="letter">a</span>
         <span class="letter">v</span>
         <span class="letter">a</span>
-        <span class="letter"> </span>
+        <span class="letter">&ensp;</span>
         <span class="letter">l</span>
         <span class="letter">o</span>
         <span class="letter">o</span>
         <span class="letter">d</span>
     </a>
-    <a id="rss-feed-link" href="https://apicrap.github.io/apiblog/feed.xml">RSS</a>
+    <a id="rss-feed-link" rel="alternate" href="{{site.baseurl}}feed.xml" type="application/atom+xml"
+        title="{{ site.title }}" target="_blank">RSS</a>
     <div id="mode-switch-wrapper"><button id="mode-switch" onclick="darkMode()">&#127769;</button></div>
     <div class="scroll-progress-container">
         <div id="progress-bar" class="scroll-progress-bar">&#128029;</div>

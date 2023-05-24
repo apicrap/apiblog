@@ -3,9 +3,7 @@
 <article id={{page.id}}>
     <h2 id=post-heading-{{page.id}}>{{ page.title | capitalize }}</h2>
     <div class="post-metadata">
-        <p>{{ page.time }} - Autor: {{ page.author | capitalize }} <br><a
-                href="https://instagram.com/k2rjet2navalood?igshid=ZGUzMzM3NWJiOQ==" target="_blank">@k2rjet2navalood
-                Instagramis</a></p>
+        <p>{{ page.time }} - Autor: {{ page.author | capitalize }}</p>
         <p>Postituse kategooriad:
             {% for category in page.categories %}
             <span> {{category}} </span>
