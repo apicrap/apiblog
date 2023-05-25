@@ -17,14 +17,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-    /*body {
-        grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
-        grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
-        grid-template-areas:
-            'header-area'
-            'main'
-            'footer-area';
-    }*/
 
     #blog-main {
         padding: 0 2rem 0 1.5rem;
@@ -53,7 +45,6 @@ div.blog-description {
 
 @media only screen and (max-width: 768px) {
     div.blog-description {
-        /*max-width: 100vw;*/
         max-width: 100%;
     }
 }
