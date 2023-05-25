@@ -2,6 +2,11 @@
 <html lang="et">
 
 <head>
+    {% if jekyll.environment == "production" %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-848L5ZETJ0"></script>
+    <script src="{{ site.baseurl }}assets/js/google_analytics_script.js"></script>
+    {% endif %}
     <title>{{ page.title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +21,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
-    {% if jekyll.environment == "production" %}
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-848L5ZETJ0"></script>
-    <script src="{{ site.baseurl }}assets/js/google_analytics_script.js"></script>
-    {% endif %}
 </head>
 
 <body>
