@@ -1,0 +1,71 @@
+@use '../color/color';
+
+#blog-main {
+    max-height: max-content;
+    padding-left: 5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+.dark-mode {
+    main {
+        background-color: $night-blue;
+        color: $blueish-gray;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /*body {
+        grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
+        grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
+        grid-template-areas:
+            'header-area'
+            'main'
+            'footer-area';
+    }*/
+
+    #blog-main {
+        padding: 0 2rem 0 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #blog-main {
+        display: grid;
+        grid-template-columns: auto 22%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            'description sidebar-container'
+            'blog-content sidebar-container';
+        column-gap: 2rem;
+    }
+}
+
+div.blog-description {
+    grid-area: description;
+
+    p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    div.blog-description {
+        /*max-width: 100vw;*/
+        max-width: 100%;
+    }
+}
+
+#blog-content {
+    grid-area: blog-content;
+}
+
+#posts {
+    grid-area: posts;
+}
+
+#sidebar-container {
+    grid-area: sidebar-container;
+}
