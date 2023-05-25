@@ -1,12 +1,9 @@
-.dark-mode #sidebar {
-    background-color: rgb(77, 129, 122);
-    border: 1px solid rgb(235, 235, 145);
-}
+@use '../color/color';
 
 #sidebar {
-    background-color: rgb(247, 244, 222);
+    background-color: $light-beige-yellow;
     padding: 1rem;
-    border: 1px solid rgb(25, 66, 78);
+    border: 1px solid $main-dark-pink;
     border-radius: 5px;
     height: max-content;
     max-height: calc(100vh - 207px);
@@ -16,52 +13,87 @@
     right: 2rem;
     overflow-y: auto;
     /*z-index: 1;*/
+
+    h3 {
+        text-align: center;
+        margin: 1rem 0 1rem 0;
+    }
+
+    ol {
+        margin-bottom: 8px;
+        list-style-position: inside;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    li,
+    a {
+        color: $grayish-blue;
+        transition: all 0.12s ease-in-out;
+    }
+
+    li:hover,
+    a:hover {
+        font-size: 1.1rem;
+        color: $regular-pink;
+    }
+
+    li.active,
+    li.active a {
+        color: $main-orange;
+    }
 }
 
-#sidebar h3 {
-    text-align: center;
-    margin: 1rem 0 1rem 0;
+.dark-mode {
+    #sidebar {
+        background-color: $main-dark-green;
+        border: 1px solid $mellow-yellow;
+
+        li,
+        a {
+            color: $pinkish-white;
+        }
+
+        li:hover,
+        a:hover {
+            font-size: 1.1rem;
+            color: $regular-pink;
+        }
+
+        li.active,
+        li.active a {
+            color: $mellow-yellow;
+        }
+    }
 }
 
-.dark-mode #sidebar h3 {
-    color: rgb(17, 17, 32);
-}
+@media only screen and (max-width: 768px) {
 
-#sidebar ol {
-    margin-bottom: 8px;
-    list-style-position: inside;
-    display: flex;
-    flex-direction: column-reverse;
-}
+    #sidebar {
+        display: none;
+    }
 
-#sidebar li,
-#sidebar a {
-    color: rgb(25, 66, 78);
-    transition: all 0.12s ease-in-out;
-}
+    #sidebar.visible {
+        display: block;
+        background-color: $mellow-yellow;
+        width: 65%;
+        top: 20rem;
+    }
 
-.dark-mode #sidebar li,
-.dark-mode #sidebar a {
-    color: rgb(245, 244, 242);
-}
+    .dark-mode {
+        #sidebar.visible {
+            background-color: $main-dark-green;
+            border: 1px solid $mellow-yellow;
+        }
+    }
 
-#sidebar li.active,
-#sidebar li.active a {
-    color: rgb(196, 70, 43);
-}
-
-.dark-mode #sidebar li.active,
-.dark-mode #sidebar li.active a {
-    color: rgb(235, 176, 57);
-}
-
-.dark-mode #sidebar li:hover,
-.dark-mode #sidebar a:hover {
-    font-size: 1.1rem;
-    color: rgb(235, 235, 145);
-}
-
-#sidebar a:hover,
-#sidebar li:hover {
-    font-size: 1.1rem;
+    #showSidebar {
+        @include light-button-theme;
+        outline: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        z-index: 10;
+    }
 }

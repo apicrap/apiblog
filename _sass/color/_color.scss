@@ -1,3 +1,38 @@
+/*Header and footer background*/
+$main-dark-green: rgb(49, 85, 97);
+$main-light-green: rgb(72, 197, 124);
+/* Dark mode main text color only*/
+$blueish-gray: rgb(134, 157, 184);
+/* Dark mode background*/
+$night-blue: rgb(17, 17, 32);
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+$grayish-blue: rgb(25, 66, 78);
+$light-blue: rgb(117, 212, 219);
+$pinkish-white: rgb(234, 222, 219);
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+$main-dark-pink: rgb(96, 53, 64);
+$regular-pink: rgb(188, 112, 164);
+/*Only img borders and scroll-progress bar */
+$main-light-purple: rgb(149, 129, 185);
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+$main-strong-yellow: rgb(236, 183, 35);
+$mellow-yellow: rgb(235, 228, 165);
+$light-beige-yellow: rgb(247, 244, 222);
+$main-orange: rgb(196, 70, 43);
+$mellow-black: rgb(27, 27, 26);
+
 .dark-geen-bg {
-    background-color: rgb(49, 85, 97);
+    background-color: $main-dark-green;
+}
+
+@mixin light-button-theme {
+    background-color: $mellow-yellow;
+    color: $main-dark-pink;
+    border: 1px solid $main-dark-pink;
+}
+
+@mixin dark-button-theme {
+    background-color: $main-dark-pink;
+    color: $mellow-yellow;
+    border: 1px solid $mellow-yellow;
 }

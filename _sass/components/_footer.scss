@@ -1,11 +1,79 @@
+@use '../color/color';
+
 footer {
+    width: 100%;
     align-content: center;
+    align-items: center;
     text-align: center;
-    border-top: 1px solid rgb(96, 53, 64);
-    color: rgb(235, 228, 165);
+    border-top: 1px solid $main-dark-pink;
+    color: $mellow-yellow;
+
+    p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
 }
 
-footer p {
+@media only screen and (max-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-columns: 2% 31% 5% 2% 20% 2% 5% 31% 2%;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            '. showSidebar showSidebar showSidebar . go-to-top go-to-top go-to-top .'
+            '. . instagram . copyright . message . .';
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-columns: 2% 10% 21% 5% 2% 20% 2% 5% 21% 10% 2%;
+        grid-template-rows: auto;
+        grid-template-areas: '. . showSidebar instagram . copyright . message go-to-top . .';
+    }
+
+    #showSidebar {
+        display: none;
+    }
+}
+
+#instagram,
+#message {
+    img {
+        border: none;
+        height: 21.27px;
+        vertical-align: middle;
+    }
+}
+
+#instagram {
+    grid-area: instagram;
+}
+
+#message {
+    grid-area: message;
+}
+
+#showSidebar {
+    grid-area: showSidebar;
+}
+
+#copyright {
+    grid-area: copyright;
+}
+
+#go-to-top {
+    grid-area: go-to-top;
+    @include light-button-theme;
+    display: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 15px;
     font-size: 1.2rem;
-    line-height: 2rem;
+
+    &:hover {
+        @include dark-button-theme;
+    }
 }

@@ -1,27 +1,108 @@
+@charset "UTF-8";
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
 .dark-geen-bg {
   background-color: rgb(49, 85, 97);
 }
 
-footer {
-  align-content: center;
-  text-align: center;
-  border-top: 1px solid rgb(96, 53, 64);
-  color: rgb(235, 228, 165);
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+.dark-geen-bg {
+  background-color: rgb(49, 85, 97);
 }
 
-footer p {
-  font-size: 1.2rem;
-  line-height: 2rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  /*width: 100vw;*/
+  overflow: hidden;
+}
+
+#blog-main {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(235, 228, 165) rgb(25, 66, 78);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(235, 228, 165);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(25, 66, 78);
+}
+
+body {
+  width: 100%;
+  display: grid;
+  height: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow: hidden;
+  /*overflow-y: hidden;*/
+  /*height: 100vh;*/
+  grid-template-columns: auto;
+  grid-template-rows: minmax(103px, max-content) auto minmax(61px, max-content);
+  /*grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(71px, max-content);*/
+  grid-template-areas: "header-area" "main" "footer-area";
 }
 
 header {
-  z-index: 2;
-  align-items: center;
+  grid-area: header-area;
+}
+
+#blog-main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer-area;
+}
+
+h1 {
+  text-shadow: 2px 2px 5px rgb(236, 183, 35);
+}
+
+h1,
+h2 {
   text-align: center;
-  border-bottom: 1px solid rgb(96, 53, 64);
-  font-family: "Patua One", cursive;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 3px rgb(54, 38, 1);
+  color: rgb(25, 66, 78);
+  margin-top: 1rem;
+}
+
+h2 {
+  margin-bottom: 1.2rem;
+}
+
+h3,
+h4 {
+  color: rgb(96, 53, 64);
+}
+
+img {
+  border: 2px solid rgb(149, 129, 185);
+}
+
+p {
+  font-size: 1.2rem;
 }
 
 a {
@@ -29,6 +110,212 @@ a {
   color: rgb(196, 70, 43);
 }
 
+.dark-mode h1,
+.dark-mode a {
+  color: rgb(235, 228, 165);
+}
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+  color: rgb(236, 183, 35);
+}
+
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+.dark-geen-bg {
+  background-color: rgb(49, 85, 97);
+}
+
+#blog-main {
+  max-height: -moz-max-content;
+  max-height: max-content;
+  padding-left: 5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+.dark-mode main {
+  background-color: rgb(17, 17, 32);
+  color: rgb(134, 157, 184);
+}
+
+@media only screen and (max-width: 768px) {
+  /*body {
+      grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
+      grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
+      grid-template-areas:
+          'header-area'
+          'main'
+          'footer-area';
+  }*/
+  #blog-main {
+    padding: 0 2rem 0 1.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #blog-main {
+    display: grid;
+    grid-template-columns: auto 22%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "description sidebar-container" "blog-content sidebar-container";
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+}
+div.blog-description {
+  grid-area: description;
+}
+div.blog-description p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  div.blog-description {
+    /*max-width: 100vw;*/
+    max-width: 100%;
+  }
+}
+#blog-content {
+  grid-area: blog-content;
+}
+
+#posts {
+  grid-area: posts;
+}
+
+#sidebar-container {
+  grid-area: sidebar-container;
+}
+
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+.dark-geen-bg {
+  background-color: rgb(49, 85, 97);
+}
+
+footer {
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid rgb(96, 53, 64);
+  color: rgb(235, 228, 165);
+}
+footer p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    display: grid;
+    grid-template-columns: 2% 31% 5% 2% 20% 2% 5% 31% 2%;
+    grid-template-rows: auto auto;
+    grid-template-areas: ". showSidebar showSidebar showSidebar . go-to-top go-to-top go-to-top ." ". . instagram . copyright . message . .";
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    display: grid;
+    grid-template-columns: 2% 10% 21% 5% 2% 20% 2% 5% 21% 10% 2%;
+    grid-template-rows: auto;
+    grid-template-areas: ". . showSidebar instagram . copyright . message go-to-top . .";
+  }
+  #showSidebar {
+    display: none;
+  }
+}
+#instagram img,
+#message img {
+  border: none;
+  height: 21.27px;
+  vertical-align: middle;
+}
+
+#instagram {
+  grid-area: instagram;
+}
+
+#message {
+  grid-area: message;
+}
+
+#showSidebar {
+  grid-area: showSidebar;
+}
+
+#copyright {
+  grid-area: copyright;
+}
+
+#go-to-top {
+  grid-area: go-to-top;
+  background-color: rgb(235, 228, 165);
+  color: rgb(96, 53, 64);
+  border: 1px solid rgb(96, 53, 64);
+  display: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
+#go-to-top:hover {
+  background-color: rgb(96, 53, 64);
+  color: rgb(235, 228, 165);
+  border: 1px solid rgb(235, 228, 165);
+}
+
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+.dark-geen-bg {
+  background-color: rgb(49, 85, 97);
+}
+
+header {
+  width: 100%;
+  z-index: 2;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid rgb(96, 53, 64);
+  font-family: "Patua One", cursive;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px rgb(27, 27, 26);
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: auto auto auto 22px;
+    grid-template-rows: 80px 22px;
+    grid-template-areas: "homepage-link rss mode-switch-wrapper ." "progress-bar progress-bar progress-bar flower";
+  }
+}
+@media only screen and (min-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: auto 5rem auto 22px;
+    grid-template-rows: minmax(80px, 3.4rem) 22px;
+    grid-template-areas: "homepage-link rss mode-switch-wrapper ." "progress-bar progress-bar progress-bar flower";
+  }
+}
 header a,
 .dark-mode header a {
   color: rgb(236, 183, 35);
@@ -39,7 +326,6 @@ header a,
   display: inline-block;
   font-size: clamp(20px, 4vw, 40px);
 }
-
 .letter:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
@@ -80,6 +366,18 @@ header a,
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+#homepage-link {
+  grid-area: homepage-link;
+}
+
+#rss-feed-link {
+  grid-area: rss;
+}
+
+#mode-switch-wrapper {
+  grid-area: mode-switch-wrapper;
+}
+
 #mode-switch {
   background-color: rgb(72, 197, 124);
   border-radius: 50%;
@@ -87,18 +385,15 @@ header a,
   font-size: clamp(20px, 4vw, 40px);
 }
 
-/* #rss-feed-link {
-    color: rgb(196, 70, 43);
-    font-size: 3.4rem;
-} */
 .scroll-progress-container {
+  grid-area: progress-bar;
   width: 100%;
-  background-image: linear-gradient(140deg, rgb(234, 222, 219) 0%, rgb(188, 112, 164) 50%, rgb(243, 241, 130) 75%);
+  background-image: linear-gradient(140deg, rgb(234, 222, 219) 0%, rgb(188, 112, 164) 50%, rgb(235, 228, 165) 75%);
 }
 
 .scroll-progress-bar {
   padding: 0;
-  background-image: linear-gradient(140deg, rgb(160, 130, 243) 0%, rgb(117, 212, 219) 50%, rgb(243, 241, 130) 75%);
+  background-image: linear-gradient(140deg, rgb(149, 129, 185) 0%, rgb(117, 212, 219) 50%, rgb(235, 228, 165) 75%);
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
   width: 0%;
@@ -111,8 +406,20 @@ header a,
 }
 
 #flower {
+  grid-area: flower;
   text-align: left;
-  background-color: rgb(243, 241, 130);
+  background-color: rgb(235, 228, 165);
+}
+
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+.dark-geen-bg {
+  background-color: rgb(49, 85, 97);
 }
 
 #posts {
@@ -121,17 +428,12 @@ header a,
   display: flex;
   flex-direction: column-reverse;
 }
-
 #posts article p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-bottom: 1rem;
 }
-
 #posts article h3 {
   margin-bottom: 0.8rem;
-}
-
-article p {
-  margin-bottom: 1rem;
 }
 
 .post-metadata p,
@@ -149,11 +451,15 @@ img.post-image-regular {
   width: 70%;
   transition: width 1s ease-in;
 }
-
 img.post-image-regular:hover {
   width: 80%;
 }
 
+@media only screen and (max-width: 768px) {
+  img.post-image-regular {
+    width: 100%;
+  }
+}
 img.hero-image {
   width: 100%;
 }
@@ -173,7 +479,6 @@ img.hero-image {
   height: auto;
   overflow: hidden;
 }
-
 .comparison-img img {
   display: block;
   vertical-align: middle;
@@ -190,15 +495,21 @@ img.hero-image {
   border-radius: 50%;
 }
 
-.dark-mode #sidebar {
-  background-color: rgb(77, 129, 122);
-  border: 1px solid rgb(235, 235, 145);
+/*Header and footer background*/
+/* Dark mode main text color only*/
+/* Dark mode background*/
+/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
+/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
+/*Only img borders and scroll-progress bar */
+/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
+.dark-geen-bg {
+  background-color: rgb(49, 85, 97);
 }
 
 #sidebar {
   background-color: rgb(247, 244, 222);
   padding: 1rem;
-  border: 1px solid rgb(25, 66, 78);
+  border: 1px solid rgb(96, 53, 64);
   border-radius: 5px;
   height: -moz-max-content;
   height: max-content;
@@ -210,280 +521,50 @@ img.hero-image {
   overflow-y: auto;
   /*z-index: 1;*/
 }
-
 #sidebar h3 {
   text-align: center;
   margin: 1rem 0 1rem 0;
 }
-
-.dark-mode #sidebar h3 {
-  color: rgb(17, 17, 32);
-}
-
 #sidebar ol {
   margin-bottom: 8px;
   list-style-position: inside;
   display: flex;
   flex-direction: column-reverse;
 }
-
 #sidebar li,
 #sidebar a {
   color: rgb(25, 66, 78);
   transition: all 0.12s ease-in-out;
 }
-
-.dark-mode #sidebar li,
-.dark-mode #sidebar a {
-  color: rgb(245, 244, 242);
+#sidebar li:hover,
+#sidebar a:hover {
+  font-size: 1.1rem;
+  color: rgb(188, 112, 164);
 }
-
 #sidebar li.active,
 #sidebar li.active a {
   color: rgb(196, 70, 43);
 }
 
-.dark-mode #sidebar li.active,
-.dark-mode #sidebar li.active a {
-  color: rgb(235, 176, 57);
+.dark-mode #sidebar {
+  background-color: rgb(49, 85, 97);
+  border: 1px solid rgb(235, 228, 165);
 }
-
+.dark-mode #sidebar li,
+.dark-mode #sidebar a {
+  color: rgb(234, 222, 219);
+}
 .dark-mode #sidebar li:hover,
 .dark-mode #sidebar a:hover {
   font-size: 1.1rem;
-  color: rgb(235, 235, 145);
+  color: rgb(188, 112, 164);
 }
-
-#sidebar a:hover,
-#sidebar li:hover {
-  font-size: 1.1rem;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  width: 100vw;
-  overflow: hidden;
-}
-
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: rgb(25, 66, 78);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(243, 241, 130);
-}
-
-body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  overflow-y: hidden;
-  height: 100vh;
-}
-
-.blog-description p {
-  text-align: center;
-}
-
-#blog-main {
-  padding-left: 5rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  line-height: 1.5;
-}
-
-h1 {
-  text-shadow: 2px 2px 5px rgb(255, 196, 0);
-}
-
-h1,
-h2 {
-  text-align: center;
-  color: rgb(25, 66, 78);
-  margin-top: 1rem;
-}
-
-h2 {
-  margin-bottom: 1.2rem;
-}
-
-h3,
-h4 {
-  color: rgb(104, 130, 116);
-}
-
-.dark-mode main {
-  background-color: rgb(17, 17, 32);
-  color: rgb(134, 157, 184);
-}
-
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode h4 {
-  color: rgb(235, 176, 57);
-}
-
-.dark-mode h1,
-.dark-mode a {
-  color: rgb(235, 235, 145);
-}
-
-#go-to-top {
-  display: none;
-  border: 1px solid rgb(96, 53, 64);
-  outline: none;
-  background-color: rgb(235, 228, 165);
-  color: rgb(104, 130, 116);
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 15px;
-  font-size: 1.2rem;
-}
-
-#go-to-top:hover {
-  background-color: rgb(104, 130, 116);
+.dark-mode #sidebar li.active,
+.dark-mode #sidebar li.active a {
   color: rgb(235, 228, 165);
-  border: 1px solid rgb(235, 228, 165);
-}
-
-img {
-  border: 2px solid rgb(149, 129, 185);
-}
-
-p {
-  font-size: 1.2rem;
-}
-
-/*
--------------------------------------------------------------------------------
-Grid and responsiveness
--------------------------------------------------------------------------------
-*/
-body {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
-  grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
-  grid-template-areas: "header-area" "main" "footer-area";
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    grid-template-rows: minmax(103px, max-content) -webkit-fill-available minmax(61px, max-content);
-    grid-template-rows: minmax(103px, max-content) fill-available minmax(61px, max-content);
-    grid-template-areas: "header-area" "main" "footer-area";
-  }
-  header {
-    display: grid;
-    grid-template-columns: auto auto auto 22px;
-    grid-template-rows: 80px 22px;
-    grid-template-areas: "homepage-link rss mode-switch-wrapper ." "progress-bar progress-bar progress-bar flower";
-  }
-  footer {
-    display: grid;
-    grid-template-columns: 2% auto auto auto 2%;
-    grid-template-rows: auto auto;
-    grid-template-areas: ". showSidebar . go-to-top ." "copyright copyright copyright copyright copyright";
-  }
-  img.post-image-regular {
-    width: 100%;
-  }
-  #blog-main {
-    padding: 0 2rem 0 1.5rem;
-  }
-}
-@media only screen and (min-width: 768px) {
-  header {
-    display: grid;
-    grid-template-columns: auto 5rem auto 22px;
-    grid-template-rows: minmax(80px, 3.4rem) 22px;
-    grid-template-areas: "homepage-link rss mode-switch-wrapper ." "progress-bar progress-bar progress-bar flower";
-  }
-  footer {
-    display: grid;
-    grid-template-columns: 2% 10% auto 10% 2%;
-    grid-template-rows: auto;
-    grid-template-areas: ". showSidebar copyright go-to-top .";
-  }
-  #blog-main {
-    display: grid;
-    grid-template-columns: auto 22%;
-    grid-template-rows: auto auto;
-    grid-template-areas: "description sidebar-container" "blog-content sidebar-container";
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
-  }
-}
-#blog-main {
-  grid-area: main;
-}
-
-#blog-description {
-  grid-area: description;
-}
-
-#blog-content {
-  grid-area: blog-content;
-}
-
-footer {
-  grid-area: footer-area;
-}
-
-header {
-  grid-area: header-area;
-}
-
-#showSidebar {
-  grid-area: showSidebar;
-}
-
-#copyright {
-  grid-area: copyright;
-}
-
-#go-to-top {
-  grid-area: go-to-top;
-}
-
-#homepage-link {
-  grid-area: homepage-link;
-}
-
-#mode-switch-wrapper {
-  grid-area: mode-switch-wrapper;
-}
-
-#rss-feed-link {
-  grid-area: rss;
-}
-
-.scroll-progress-container {
-  grid-area: progress-bar;
-}
-
-#flower {
-  grid-area: flower;
-}
-
-@media only screen and (min-width: 768px) {
-  #showSidebar {
-    display: none;
-  }
-}
-@media only screen and (max-width: 768px) {
-  #blog-description {
-    max-width: 100vw;
-  }
   #sidebar {
     display: none;
   }
@@ -494,25 +575,18 @@ header {
     top: 20rem;
   }
   .dark-mode #sidebar.visible {
-    background-color: rgb(104, 130, 116);
+    background-color: rgb(49, 85, 97);
     border: 1px solid rgb(235, 228, 165);
   }
   #showSidebar {
+    background-color: rgb(235, 228, 165);
+    color: rgb(96, 53, 64);
     border: 1px solid rgb(96, 53, 64);
     outline: none;
-    background-color: 235, 228, 165;
-    color: rgb(104, 130, 116);
     cursor: pointer;
     padding: 5px;
     border-radius: 15px;
     font-size: 1.2rem;
     z-index: 10;
   }
-}
-#posts {
-  grid-area: posts;
-}
-
-#sidebar-container {
-  grid-area: sidebar-container;
 }/*# sourceMappingURL=main.css.map */
