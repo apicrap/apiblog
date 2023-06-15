@@ -2,6 +2,8 @@
 time: 22.05.2023 15:05
 author: apicrap
 title:  "Milleks üldse mesilasi pidada?"
+human_generated: 100%
+ai_generated: 0%
 categories: mesilased
 tags:
 picture_date1: 22.05.2023

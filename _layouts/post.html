@@ -4,6 +4,7 @@
     <h2 id=post-heading-{{page.id}}>{{ page.title | capitalize }}</h2>
     <div class="post-metadata">
         <p>{{ page.time }} - Autor: {{ page.author | capitalize }}</p>
+        <p><span>Inimtoodetud sisu: {{page.human_generated}},&#8194;AI genereeritud sisu: {{page.ai_generated}}</p>
         <p>Postituse kategooriad:
             {% for category in page.categories %}
             <span> {{category}} </span>

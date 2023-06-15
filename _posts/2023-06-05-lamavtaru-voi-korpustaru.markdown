@@ -2,6 +2,8 @@
 time: 05.06.2023 14:15
 author: apicrap
 title:  "Lamavtaru või korpustaru"
+human_generated: 100%
+ai_generated: 0%
 categories: inventar
 tags: lamavtaru korpustaru
 compare_1: /assets/images/Lamavtaru2.webp
