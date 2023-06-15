@@ -40,7 +40,7 @@ function showScrollProgress() {
     } else {
         resetSidebarHeightAndPosition()
     }
-    console.log(PROGRESS_BAR.style.transform, PROGRESS_BAR.style.width)
+
     if (PROGRESS_BAR.style.width > scrolledPercent + "%") {
         PROGRESS_BAR.style.transform = "scaleX(1)";
         PROGRESS_BAR.style.textAlign = "right";
