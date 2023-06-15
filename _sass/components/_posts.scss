@@ -1,7 +1,7 @@
 @use '../color/color';
 
 #posts {
-    margin: 2rem 2rem 0 0;
+    margin: 2rem 1rem 0 0;
     text-align: justify;
     display: flex;
     flex-direction: column-reverse;
@@ -27,7 +27,6 @@
         font-style: italic;
         text-align: center;
     }
-
 }
 
 img.post-image-regular {
@@ -42,10 +41,21 @@ img.post-image-regular {
     }
 }
 
-@media only screen and (max-width: 768px) {
-    img.post-image-regular {
-        width: 100%;
+img.post-image-small {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    transition: width 1s ease-in;
+
+    &:hover {
+        width: 40%;
     }
+}
+
+figcaption {
+    text-align: center;
+    font-size: smaller;
 }
 
 img.hero-image {
@@ -55,7 +65,7 @@ img.hero-image {
 .comparison-container {
     position: relative;
     height: 300px;
-    width: 400px;
+    width: 534px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -82,4 +92,24 @@ img.hero-image {
     background-color: $mellow-black;
     opacity: 0.7;
     border-radius: 50%;
+}
+
+@media only screen and (max-width: 768.999px) {
+    img.post-image-regular {
+        width: 100%;
+    }
+
+    img.post-image-small {
+        width: 50%;
+    }
+
+    .comparison-container,
+    .comparison-img img {
+        height: 169px;
+        width: 268px;
+    }
+
+    .comparison-img {
+        width: 100%;
+    }
 }

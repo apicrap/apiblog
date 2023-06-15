@@ -18,17 +18,21 @@
     {% if page.hero %}
     <img class="hero-image" src="{{page.hero}}">
     {% endif %}
+
     {% if page.compare_1 %}
-
     <div class="comparison-container">
-        <div class="comparison-img">
-            <img src="{{page.compare_1}}" width="400" height="300">
-        </div>
-        <div class="comparison-img comparison-overlay">
-            <img src="{{page.compare_2}}" width="400" height="300">
-        </div>
+        <figure>
+            <div class="comparison-img">
+                <img src="{{page.compare_1}}" width="534" height="300">
+            </div>
+            <div class="comparison-img comparison-overlay">
+                <img src="{{page.compare_2}}" width="534" height="300">
+            </div>
+            <figcaption>
+                {{page.compare_caption}}&#8194;Autor: {{page.compare_author}} {{page.picture_date_compare}}
+            </figcaption>
+        </figure>
     </div>
-
     {% endif %}
     <p>{{content}}</p>
 </article>
