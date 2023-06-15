@@ -21,11 +21,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
+    {% if jekyll.environment == "production" %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329095806651182"
         crossorigin="anonymous"></script>
+    {% endif %}
 </head>
 
-<body>
+<body id="main-body">
     <noscript>See leht kasutab JavaScripti mitmete kasutusfunktsioonide võimaldamiseks, sh näiteks sisukorra kuvamiseks.
         Keelates skriptimise, ei ole leht sirvimiskõlbulik.</noscript>
     {% include navigation.html %}
@@ -42,8 +44,8 @@
             {{ content }}
             {% include sidebar.html %}
         </div>
+        <button id="go-to-top" title="Tagasi üles" onclick="goBackToTop()">&#8679;</button>
     </main>
-    {% include footer.html %}
     {% include scripts.html %}
 </body>
 
