@@ -6,8 +6,8 @@ human_generated: 100%
 ai_generated: 0%
 categories: inventar
 tags: lamavtaru korpustaru
-compare_1: /assets/images/Lamavtaru2.webp
-compare_2: /assets/images/Lamavtaru1.webp
+compare_1: assets/images/Lamavtaru2.webp
+compare_2: assets/images/Lamavtaru1.webp
 compare_caption: Lamavtaru uuenduskuur
 compare_author: apicrap
 picture_date_compare: juuni 2023
