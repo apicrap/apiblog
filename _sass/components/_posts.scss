@@ -113,3 +113,16 @@ img.hero-image {
         width: 100%;
     }
 }
+
+@media only screen and (min-width: 768.999px) and (max-width: 920.999px) {
+
+    .comparison-container,
+    .comparison-img img {
+        height: 253.5px;
+        width: 402px;
+    }
+
+    .comparison-img {
+        width: 100%;
+    }
+}
