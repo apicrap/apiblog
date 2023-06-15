@@ -57,8 +57,8 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   overflow: hidden;
   grid-template-columns: auto;
-  grid-template-rows: minmax(103px, max-content) auto minmax(61px, max-content);
-  grid-template-areas: "header-area" "main" "footer-area";
+  grid-template-rows: minmax(103px, max-content) auto;
+  grid-template-areas: "header-area" "main";
 }
 
 header {
@@ -67,10 +67,6 @@ header {
 
 #blog-main {
   grid-area: main;
-}
-
-footer {
-  grid-area: footer-area;
 }
 
 h1 {
@@ -130,7 +126,6 @@ a {
 #blog-main {
   max-height: -moz-max-content;
   max-height: max-content;
-  padding-left: 5rem;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -142,31 +137,54 @@ a {
   color: rgb(134, 157, 184);
 }
 
-@media only screen and (max-width: 768px) {
-  #blog-main {
-    padding: 0 2rem 0 1.5rem;
-  }
+#go-to-top {
+  background-color: rgb(235, 228, 165);
+  color: rgb(96, 53, 64);
+  border: 1px solid rgb(96, 53, 64);
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 2rem;
 }
-@media only screen and (min-width: 768px) {
-  #blog-main {
-    display: grid;
-    grid-template-columns: auto 22%;
-    grid-template-rows: auto auto;
-    grid-template-areas: "description sidebar-container" "blog-content sidebar-container";
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
-  }
-}
+
 div.blog-description {
   grid-area: description;
+  padding: 1rem;
 }
 div.blog-description p {
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768.999px) {
+  #blog-main {
+    padding: 0 2.5rem 0 1.5rem;
+  }
   div.blog-description {
     max-width: 100%;
+  }
+  #go-to-top:active {
+    background-color: rgb(96, 53, 64);
+    color: rgb(235, 228, 165);
+    border: 1px solid rgb(235, 228, 165);
+  }
+}
+@media only screen and (min-width: 768.999px) {
+  #blog-main {
+    display: grid;
+    grid-template-columns: 3rem calc(70% - 6rem) 30% 3rem;
+    grid-template-rows: auto auto;
+    grid-template-areas: ". description sidebar-container ." ". blog-content sidebar-container .";
+  }
+  #go-to-top:hover {
+    background-color: rgb(96, 53, 64);
+    color: rgb(235, 228, 165);
+    border: 1px solid rgb(235, 228, 165);
   }
 }
 #blog-content {
@@ -192,90 +210,6 @@ div.blog-description p {
   background-color: rgb(49, 85, 97);
 }
 
-footer {
-  width: 100%;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  border-top: 1px solid rgb(96, 53, 64);
-  color: rgb(235, 228, 165);
-}
-footer p {
-  font-size: 1.2rem;
-  line-height: 2rem;
-}
-
-@media only screen and (max-width: 768px) {
-  footer {
-    display: grid;
-    grid-template-columns: 2% 31% 5% 2% 20% 2% 5% 31% 2%;
-    grid-template-rows: auto auto;
-    grid-template-areas: ". showSidebar showSidebar showSidebar . go-to-top go-to-top go-to-top ." ". . instagram . copyright . message . .";
-  }
-}
-@media only screen and (min-width: 768px) {
-  footer {
-    display: grid;
-    grid-template-columns: 2% 10% 21% 5% 2% 20% 2% 5% 21% 10% 2%;
-    grid-template-rows: auto;
-    grid-template-areas: ". . showSidebar instagram . copyright . message go-to-top . .";
-  }
-  #showSidebar {
-    display: none;
-  }
-}
-#instagram img,
-#message img {
-  border: none;
-  height: 21.27px;
-  vertical-align: middle;
-}
-
-#instagram {
-  grid-area: instagram;
-}
-
-#message {
-  grid-area: message;
-}
-
-#showSidebar {
-  grid-area: showSidebar;
-}
-
-#copyright {
-  grid-area: copyright;
-}
-
-#go-to-top {
-  grid-area: go-to-top;
-  background-color: rgb(235, 228, 165);
-  color: rgb(96, 53, 64);
-  border: 1px solid rgb(96, 53, 64);
-  display: none;
-  outline: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 15px;
-  font-size: 1.2rem;
-}
-#go-to-top:hover {
-  background-color: rgb(96, 53, 64);
-  color: rgb(235, 228, 165);
-  border: 1px solid rgb(235, 228, 165);
-}
-
-/*Header and footer background*/
-/* Dark mode main text color only*/
-/* Dark mode background*/
-/*$grayish-blue: rgb(25, 66, 78); Scrollbar track, h1, h2*/
-/*Sidebar in dark mode, buttons on hover, h3, h4 and button text color*/
-/*Only img borders and scroll-progress bar */
-/*Header links Kärjetänava lood and rss, text-shadow for h1 Blogist, dark mode li and dark mode h2 - h4*/
-.dark-geen-bg {
-  background-color: rgb(49, 85, 97);
-}
-
 header {
   width: 100%;
   z-index: 2;
@@ -287,20 +221,48 @@ header {
   text-shadow: 3px 3px 3px rgb(27, 27, 26);
 }
 
-@media only screen and (max-width: 768px) {
+#svg5,
+#svg1516 {
+  border: none;
+  height: 21.27px;
+  width: auto;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 768.999px) {
   header {
     display: grid;
-    grid-template-columns: auto auto auto 22px;
+    grid-template-columns: 22px 2rem auto auto 22px;
     grid-template-rows: 80px 22px;
-    grid-template-areas: "homepage-link rss mode-switch-wrapper ." "progress-bar progress-bar progress-bar flower";
+    grid-template-areas: ". showMenu homepage-link mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar flower";
+  }
+  #showSidebar {
+    display: block;
+  }
+  #social {
+    display: none;
+  }
+  #homepage-link {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768.999px) {
   header {
     display: grid;
-    grid-template-columns: auto 5rem auto 22px;
-    grid-template-rows: minmax(80px, 3.4rem) 22px;
-    grid-template-areas: "homepage-link rss mode-switch-wrapper ." "progress-bar progress-bar progress-bar flower";
+    grid-template-columns: 22px auto 15% 15% 22px;
+    grid-template-rows: minmax(80px, 4rem) 22px;
+    grid-template-areas: "homepage-link homepage-link social mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar flower";
+  }
+  #social {
+    grid-area: social;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-areas: "instagram message rss";
+    grid-gap: 5px;
+  }
+  #showSidebar {
+    display: none;
   }
 }
 header a,
@@ -311,50 +273,64 @@ header a,
 .letter {
   will-change: transform;
   display: inline-block;
-  font-size: clamp(20px, 4vw, 40px);
-}
-.letter:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+  font-size: clamp(16px, 4vw, 40px);
 }
 
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
+@media (prefers-reduced-motion: no-preference) {
+  .letter:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
   }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
   }
 }
+#showSidebar {
+  grid-area: showMenu;
+}
+
 #homepage-link {
   grid-area: homepage-link;
+}
+
+#instagram {
+  grid-area: instagram;
+}
+
+#message {
+  grid-area: message;
 }
 
 #rss-feed-link {
@@ -398,6 +374,13 @@ header a,
   background-color: rgb(235, 228, 165);
 }
 
+#bee-hive {
+  grid-area: bee-hive;
+  text-align: right;
+  background-color: rgb(235, 228, 165);
+  z-index: 5;
+}
+
 /*Header and footer background*/
 /* Dark mode main text color only*/
 /* Dark mode background*/
@@ -410,7 +393,7 @@ header a,
 }
 
 #posts {
-  margin: 2rem 2rem 0 0;
+  margin: 2rem 1rem 0 0;
   text-align: justify;
   display: flex;
   flex-direction: column-reverse;
@@ -442,11 +425,22 @@ img.post-image-regular:hover {
   width: 80%;
 }
 
-@media only screen and (max-width: 768px) {
-  img.post-image-regular {
-    width: 100%;
-  }
+img.post-image-small {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  transition: width 1s ease-in;
 }
+img.post-image-small:hover {
+  width: 40%;
+}
+
+figcaption {
+  text-align: center;
+  font-size: smaller;
+}
+
 img.hero-image {
   width: 100%;
 }
@@ -454,7 +448,7 @@ img.hero-image {
 .comparison-container {
   position: relative;
   height: 300px;
-  width: 400px;
+  width: 534px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -482,6 +476,32 @@ img.hero-image {
   border-radius: 50%;
 }
 
+@media only screen and (max-width: 768.999px) {
+  img.post-image-regular {
+    width: 100%;
+  }
+  img.post-image-small {
+    width: 50%;
+  }
+  .comparison-container,
+  .comparison-img img {
+    height: 169px;
+    width: 268px;
+  }
+  .comparison-img {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768.999px) and (max-width: 920.999px) {
+  .comparison-container,
+  .comparison-img img {
+    height: 253.5px;
+    width: 402px;
+  }
+  .comparison-img {
+    width: 100%;
+  }
+}
 /*Header and footer background*/
 /* Dark mode main text color only*/
 /* Dark mode background*/
@@ -504,19 +524,39 @@ img.hero-image {
   width: 20%;
   position: fixed;
   top: 125px;
-  right: 2rem;
+  right: 3rem;
   overflow-y: auto;
-  /*z-index: 1;*/
+  z-index: 11;
 }
 #sidebar h3 {
   text-align: center;
   margin: 1rem 0 1rem 0;
+}
+#sidebar #social-block {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+#sidebar #social-block {
+  text-align: center;
+}
+#sidebar #social-block a,
+#sidebar #social-block p {
+  vertical-align: bottom;
+  color: rgb(96, 53, 64);
+  line-height: 22px;
+  margin-bottom: 8px;
+}
+#sidebar #rss-feed-sidebar {
+  font-size: 21.27px;
 }
 #sidebar ol {
   margin-bottom: 8px;
   list-style-position: inside;
   display: flex;
   flex-direction: column-reverse;
+}
+#sidebar a {
+  margin: 8px;
 }
 #sidebar li,
 #sidebar a {
@@ -532,6 +572,28 @@ img.hero-image {
 #sidebar li.active a {
   color: rgb(196, 70, 43);
 }
+#sidebar #instagram-sidebar #svg5,
+#sidebar #instagram-sidebar #svg1516,
+#sidebar #message-sidebar #svg5,
+#sidebar #message-sidebar #svg1516 {
+  height: 21.27px;
+  width: auto;
+  border: none;
+}
+#sidebar #instagram-sidebar #svg1516 g g g path,
+#sidebar #message-sidebar #svg1516 g g g path {
+  stroke: rgb(96, 53, 64) !important;
+}
+#sidebar #instagram-sidebar #svg5 g g rect,
+#sidebar #instagram-sidebar #svg5 g g #path1190,
+#sidebar #message-sidebar #svg5 g g rect,
+#sidebar #message-sidebar #svg5 g g #path1190 {
+  stroke: rgb(96, 53, 64) !important;
+}
+#sidebar #instagram-sidebar #svg5 g g #path1294,
+#sidebar #message-sidebar #svg5 g g #path1294 {
+  fill: rgb(96, 53, 64) !important;
+}
 
 .dark-mode #sidebar {
   background-color: rgb(49, 85, 97);
@@ -540,6 +602,9 @@ img.hero-image {
 .dark-mode #sidebar li,
 .dark-mode #sidebar a {
   color: rgb(234, 222, 219);
+}
+.dark-mode #sidebar #social-block p {
+  color: rgb(235, 228, 165);
 }
 .dark-mode #sidebar li:hover,
 .dark-mode #sidebar a:hover {
@@ -550,8 +615,35 @@ img.hero-image {
 .dark-mode #sidebar li.active a {
   color: rgb(235, 228, 165);
 }
+.dark-mode #sidebar #social-block,
+.dark-mode #sidebar #rss-feed-sidebar {
+  color: rgb(235, 228, 165);
+}
+.dark-mode #sidebar #instagram-sidebar #svg5,
+.dark-mode #sidebar #instagram-sidebar #svg1516,
+.dark-mode #sidebar #message-sidebar #svg5,
+.dark-mode #sidebar #message-sidebar #svg1516 {
+  border: none;
+  height: 21.27px;
+  width: auto;
+  vertical-align: middle;
+}
+.dark-mode #sidebar #instagram-sidebar #svg1516 g g g path,
+.dark-mode #sidebar #message-sidebar #svg1516 g g g path {
+  stroke: rgb(235, 228, 165) !important;
+}
+.dark-mode #sidebar #instagram-sidebar #svg5 g g rect,
+.dark-mode #sidebar #instagram-sidebar #svg5 g g #path1190,
+.dark-mode #sidebar #message-sidebar #svg5 g g rect,
+.dark-mode #sidebar #message-sidebar #svg5 g g #path1190 {
+  stroke: rgb(235, 228, 165) !important;
+}
+.dark-mode #sidebar #instagram-sidebar #svg5 g g #path1294,
+.dark-mode #sidebar #message-sidebar #svg5 g g #path1294 {
+  fill: rgb(235, 228, 165) !important;
+}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768.999px) {
   #sidebar {
     display: none;
   }
@@ -559,7 +651,6 @@ img.hero-image {
     display: block;
     background-color: rgb(235, 228, 165);
     width: 65%;
-    top: 20rem;
   }
   .dark-mode #sidebar.visible {
     background-color: rgb(49, 85, 97);
@@ -573,7 +664,22 @@ img.hero-image {
     cursor: pointer;
     padding: 5px;
     border-radius: 15px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     z-index: 10;
+    text-align: center;
+    margin: auto;
+  }
+  #social-block {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768.999px) {
+  #social-block {
+    display: none;
+  }
+}
+@media only screen and (min-width: 920px) {
+  #sidebar {
+    width: 30%;
   }
 }/*# sourceMappingURL=main.css.map */
