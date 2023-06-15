@@ -27,7 +27,7 @@ header {
         grid-template-rows: 80px 22px;
         grid-template-areas:
             '. showMenu homepage-link mode-switch-wrapper .'
-            'progress-bar progress-bar progress-bar progress-bar flower';
+            'bee-hive progress-bar progress-bar progress-bar flower';
     }
 
     #showSidebar {
@@ -47,11 +47,11 @@ header {
 @media only screen and (min-width: 768.999px) {
     header {
         display: grid;
-        grid-template-columns: auto 15% 15% 22px;
+        grid-template-columns: 22px auto 15% 15% 22px;
         grid-template-rows: minmax(80px, 4rem) 22px;
         grid-template-areas:
-            'homepage-link social mode-switch-wrapper .'
-            'progress-bar progress-bar progress-bar flower';
+            'homepage-link homepage-link social mode-switch-wrapper .'
+            'bee-hive progress-bar progress-bar progress-bar flower';
     }
 
     #social {
@@ -195,4 +195,11 @@ header,
     grid-area: flower;
     text-align: left;
     background-color: $mellow-yellow;
+}
+
+#bee-hive {
+    grid-area: bee-hive;
+    text-align: right;
+    background-color: $mellow-yellow;
+    z-index: 5;
 }

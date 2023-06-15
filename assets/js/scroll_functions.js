@@ -40,8 +40,24 @@ function showScrollProgress() {
     } else {
         resetSidebarHeightAndPosition()
     }
-
-    PROGRESS_BAR.style.width = scrolledPercent + "%";
+    console.log(PROGRESS_BAR.style.transform, PROGRESS_BAR.style.width)
+    if (PROGRESS_BAR.style.width > scrolledPercent + "%") {
+        PROGRESS_BAR.style.transform = "scaleX(1)";
+        PROGRESS_BAR.style.textAlign = "right";
+        PROGRESS_BAR.style.borderBottomRightRadius = "30px";
+        PROGRESS_BAR.style.borderTopRightRadius = "30px";
+        PROGRESS_BAR.style.borderBottomLeftRadius = "0px";
+        PROGRESS_BAR.style.borderTopLeftRadius = "0px";
+        PROGRESS_BAR.style.width = scrolledPercent + "%";
+    } else {
+        PROGRESS_BAR.style.transform = "scaleX(-1)";
+        PROGRESS_BAR.style.textAlign = "left";
+        PROGRESS_BAR.style.borderBottomRightRadius = "0px";
+        PROGRESS_BAR.style.borderTopRightRadius = "0px";
+        PROGRESS_BAR.style.borderBottomLeftRadius = "30px";
+        PROGRESS_BAR.style.borderTopLeftRadius = "30px";
+        PROGRESS_BAR.style.width = scrolledPercent + "%";
+    }
 }
 
 function goBackToTop() {
