@@ -2,7 +2,8 @@
 layout: default
 ---
 <div id="posts">
-    {% for post in site.posts %}
+    {% assign reversed_posts = site.posts | reverse %}
+    {% for post in reversed_posts %}
     {{post}}
     {% endfor %}
 </div>
