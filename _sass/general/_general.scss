@@ -38,10 +38,17 @@ body {
     overflow: hidden;
     grid-template-columns: auto;
     overscroll-behavior-y: auto;
-    grid-template-rows: minmax(103px, max-content) auto;
     grid-template-areas:
         'header-area'
         'main';
+}
+
+@media only screen and not (max-width: 768.999px) {
+    @media only screen and not (orientation: landscape) {
+        body {
+            grid-template-rows: minmax(103px, max-content) auto;
+        }
+    }
 }
 
 header {

@@ -59,10 +59,14 @@ body {
   overflow: hidden;
   grid-template-columns: auto;
   overscroll-behavior-y: auto;
-  grid-template-rows: minmax(103px, max-content) auto;
   grid-template-areas: "header-area" "main";
 }
 
+@media only screen and (not (max-width: 768.999px)) and (not (orientation: landscape)) {
+  body {
+    grid-template-rows: minmax(103px, max-content) auto;
+  }
+}
 header {
   grid-area: header-area;
 }
@@ -231,7 +235,34 @@ header {
   vertical-align: middle;
 }
 
-@media only screen and (max-width: 768.999px) {
+@media only screen and (max-width: 768.999px) and (orientation: landscape) {
+  header {
+    display: grid;
+    grid-template-columns: 22px 2rem auto auto 22px;
+    grid-template-rows: 22px;
+    grid-template-areas: "bee-hive progress-bar progress-bar progress-bar flower";
+  }
+  #showSidebar {
+    display: block;
+    position: fixed;
+    top: 2rem;
+    right: 1rem;
+    z-index: 10;
+  }
+  #homepage-link {
+    display: none;
+  }
+  #mode-switch-wrapper {
+    display: none;
+  }
+  /*#showSidebar {
+      display: none;
+  }*/
+  #social {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768.999px) and (orientation: portrait) {
   header {
     display: grid;
     grid-template-columns: 22px 2rem auto auto 22px;

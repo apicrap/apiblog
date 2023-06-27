@@ -14,7 +14,7 @@ function startComparing() {
 
         let slider = document.createElement("DIV");
         slider.setAttribute("class", "image-comparison-slider");
-        slider.innerHTML = "&harr;"
+        slider.innerHTML = "↔"
         img.parentElement.insertBefore(slider, img);
 
         slider.style.top = (imageHeight / 2) - (slider.offsetHeight / 2) + "px";
