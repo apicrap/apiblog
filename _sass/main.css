@@ -421,10 +421,12 @@ img.post-image-regular {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  height: auto;
   transition: width 1s ease-in;
 }
 img.post-image-regular:hover {
   width: 80%;
+  height: auto;
 }
 
 img.post-image-small {
@@ -432,10 +434,12 @@ img.post-image-small {
   margin-left: auto;
   margin-right: auto;
   width: 30%;
+  height: auto;
   transition: width 1s ease-in;
 }
 img.post-image-small:hover {
   width: 40%;
+  height: auto;
 }
 
 figcaption {
@@ -474,8 +478,11 @@ img.hero-image {
   width: 40px;
   height: 40px;
   background-color: rgb(27, 27, 26);
+  color: #fff;
+  text-align: center;
   opacity: 0.7;
   border-radius: 50%;
+  line-height: 2.5;
 }
 
 @media only screen and (max-width: 768.999px) {
