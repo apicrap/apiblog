@@ -255,9 +255,6 @@ header {
   #mode-switch-wrapper {
     display: none;
   }
-  /*#showSidebar {
-      display: none;
-  }*/
   #social {
     display: none;
   }
@@ -312,7 +309,7 @@ header a,
 @media (prefers-reduced-motion: no-preference) {
   .letter:hover {
     animation: shake 0.5s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 3;
   }
   @keyframes shake {
     0% {

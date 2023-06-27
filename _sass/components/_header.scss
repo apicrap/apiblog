@@ -45,10 +45,6 @@ header {
             display: none;
         }
 
-        /*#showSidebar {
-            display: none;
-        }*/
-
         #social {
             display: none;
         }
@@ -123,7 +119,7 @@ header,
     .letter {
         &:hover {
             animation: shake 0.5s;
-            animation-iteration-count: infinite;
+            animation-iteration-count: 3;
         }
     }
 
