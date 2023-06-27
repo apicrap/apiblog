@@ -97,10 +97,12 @@ img.hero-image {
 @media only screen and (max-width: 768.999px) {
     img.post-image-regular {
         width: 100%;
+        height: auto;
     }
 
     img.post-image-small {
         width: 50%;
+        height: auto;
     }
 
     .comparison-container,

@@ -17,17 +17,17 @@
         </p>
     </div>
     {% if page.hero %}
-    <img class="hero-image" src="{{page.hero}}">
+    <img class="hero-image" src="{{site.baseurl}}{{page.hero}}">
     {% endif %}
 
     {% if page.compare_1 %}
     <div class="comparison-container">
         <figure>
             <div class="comparison-img">
-                <img src="{{site.baseurl}}{{page.compare_1}}" width="534" height="300">
+                <img src="{{site.baseurl}}{{page.compare_1}}" width="534" height="300" alt="{{page.alt_compare_1}}">
             </div>
             <div class="comparison-img comparison-overlay">
-                <img src="{{site.baseurl}}{{page.compare_2}}" width="534" height="300">
+                <img src="{{site.baseurl}}{{page.compare_2}}" width="534" height="300" alt="{{page.alt_compare_2}}">
             </div>
             <figcaption>
                 {{page.compare_caption}}&#8194;Autor: {{page.compare_author}} {{page.picture_date_compare}}
