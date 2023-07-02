@@ -4,9 +4,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste lõputult huvitavat maailma koos avastada.
 github_username: apicrap
 # Serving
-domain: apicrap.github.io
-url: "https://apicrap.github.io/" # http://127.0.0.1:4000/apiblog/
-baseurl: "/apiblog/" # ""
+# domain: karjetanav.eu
+url: https://karjetanav.eu/ # http://127.0.0.1:4000/ # "https://apicrap.github.io/"
+baseurl: "" # "/apiblog/"
 
 # Outputting
 timezone: Europe/Tallinn
