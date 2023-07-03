@@ -4,6 +4,10 @@ layout: 404
 ---
 
 <style type="text/css" media="screen">
+  body {
+    height: auto;
+  }
+
   .container {
     margin: 10px auto;
     max-width: 600px;
@@ -16,17 +20,11 @@ layout: 404
     line-height: 1;
     letter-spacing: -1px;
   }
-
-  #blog-main {
-    grid-template-columns: 100%;
-    grid-template-rows: minmax(calc(100vh - 164px), max-content);
-  }
 </style>
 
 <div class="container">
   <h1>404</h1>
-
   <p><strong>Lehte ei leitud :(</strong></p>
-  <p>Kahjuks ei leidnud mesilased sellist lehte.</p>
-  {% include sidebar.html %}
+  <p>Kahjuks ei leidnud mesilased sellist lehte. &#128029;</p>
+  <p><a href="{{site.url}}">Mine Kärjetänava lugude esilehele</a> või vali jätkamiseks artikkel menüüst.</p>
 </div>

@@ -2,20 +2,26 @@
 <html lang="et">
 
 <head>
-    <title>{{ site.title }}</title>
+    {% if jekyll.environment == "production" %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-848L5ZETJ0"></script>
+    <script src="{{ site.baseurl }}assets/js/google_analytics_script.js"></script>
+    {% endif %}
+    <title>404 - lehte ei leitud</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="application-name" content="Apicrap mesindusblogi">
     <meta name="author" content="apicrap">
     <meta name="developer" content="devKarin">
-    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <meta name="description" content="Lehte ei leitud">
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}assets/favicon/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">-->
     <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
     {% if jekyll.environment == "production" %}
-    <script src="my-analytics-script.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329095806651182"
+        crossorigin="anonymous"></script>
     {% endif %}
 </head>
 
