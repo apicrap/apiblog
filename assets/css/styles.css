@@ -142,6 +142,9 @@ a {
   background-color: rgb(17, 17, 32);
   color: rgb(134, 157, 184);
 }
+.dark-mode main a.bmc-btn {
+  color: black;
+}
 
 #go-to-top {
   background-color: rgb(235, 228, 165);
@@ -235,12 +238,18 @@ header {
   vertical-align: middle;
 }
 
+#support svg {
+  height: 42.54px;
+  width: auto;
+  vertical-align: middle;
+}
+
 @media only screen and (max-width: 768.999px) and (orientation: landscape) {
   header {
     display: grid;
-    grid-template-columns: 22px 2rem auto auto 22px;
+    grid-template-columns: 22px 2rem auto auto auto 22px;
     grid-template-rows: 22px;
-    grid-template-areas: "bee-hive progress-bar progress-bar progress-bar flower";
+    grid-template-areas: "bee-hive progress-bar progress-bar progress-bar progress-bar flower";
   }
   #showSidebar {
     display: block;
@@ -258,18 +267,24 @@ header {
   #social {
     display: none;
   }
+  #support {
+    display: none;
+  }
 }
 @media only screen and (max-width: 768.999px) and (orientation: portrait) {
   header {
     display: grid;
-    grid-template-columns: 22px 2rem auto auto 22px;
+    grid-template-columns: 22px 2rem auto auto auto 22px;
     grid-template-rows: 80px 22px;
-    grid-template-areas: ". showMenu homepage-link mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar flower";
+    grid-template-areas: ". showMenu homepage-link support mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar progress-bar flower";
   }
   #showSidebar {
     display: block;
   }
   #social {
+    display: none;
+  }
+  #support {
     display: none;
   }
   #homepage-link {
@@ -280,9 +295,9 @@ header {
 @media only screen and (min-width: 768.999px) {
   header {
     display: grid;
-    grid-template-columns: 22px auto 15% 15% 22px;
+    grid-template-columns: 22px auto 12% 12% 10% 22px;
     grid-template-rows: minmax(80px, 4rem) 22px;
-    grid-template-areas: "homepage-link homepage-link social mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar flower";
+    grid-template-areas: "homepage-link homepage-link social support mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar progress-bar flower";
   }
   #social {
     grid-area: social;
@@ -353,6 +368,10 @@ header a,
 
 #homepage-link {
   grid-area: homepage-link;
+}
+
+#support {
+  grid-area: support;
 }
 
 #instagram {
@@ -584,6 +603,12 @@ img.hero-image {
   color: rgb(96, 53, 64);
   line-height: 22px;
   margin-bottom: 8px;
+}
+#sidebar #social-block #coffee svg {
+  display: block;
+  height: 42.54px;
+  width: auto;
+  margin: 12px auto 0 auto;
 }
 #sidebar #rss-feed-sidebar {
   font-size: 21.27px;

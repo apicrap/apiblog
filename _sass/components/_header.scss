@@ -19,14 +19,20 @@ header {
     vertical-align: middle;
 }
 
+#support svg {
+    height: 42.54px;
+    width: auto;
+    vertical-align: middle;
+}
+
 @media only screen and (max-width: 768.999px) {
     @media only screen and (orientation: landscape) {
         header {
             display: grid;
-            grid-template-columns: 22px 2rem auto auto 22px;
+            grid-template-columns: 22px 2rem auto auto auto 22px;
             grid-template-rows: 22px;
             grid-template-areas:
-                'bee-hive progress-bar progress-bar progress-bar flower';
+                'bee-hive progress-bar progress-bar progress-bar progress-bar flower';
         }
 
         #showSidebar {
@@ -48,16 +54,20 @@ header {
         #social {
             display: none;
         }
+
+        #support {
+            display: none;
+        }
     }
 
     @media only screen and (orientation: portrait) {
         header {
             display: grid;
-            grid-template-columns: 22px 2rem auto auto 22px;
+            grid-template-columns: 22px 2rem auto auto auto 22px;
             grid-template-rows: 80px 22px;
             grid-template-areas:
-                '. showMenu homepage-link mode-switch-wrapper .'
-                'bee-hive progress-bar progress-bar progress-bar flower';
+                '. showMenu homepage-link support mode-switch-wrapper .'
+                'bee-hive progress-bar progress-bar progress-bar progress-bar flower';
         }
 
         #showSidebar {
@@ -65,6 +75,10 @@ header {
         }
 
         #social {
+            display: none;
+        }
+
+        #support {
             display: none;
         }
 
@@ -80,11 +94,11 @@ header {
 @media only screen and (min-width: 768.999px) {
     header {
         display: grid;
-        grid-template-columns: 22px auto 15% 15% 22px;
+        grid-template-columns: 22px auto 12% 12% 10% 22px;
         grid-template-rows: minmax(80px, 4rem) 22px;
         grid-template-areas:
-            'homepage-link homepage-link social mode-switch-wrapper .'
-            'bee-hive progress-bar progress-bar progress-bar flower';
+            'homepage-link homepage-link social support mode-switch-wrapper .'
+            'bee-hive progress-bar progress-bar progress-bar progress-bar flower';
     }
 
     #social {
@@ -177,6 +191,10 @@ header,
 
 #homepage-link {
     grid-area: homepage-link;
+}
+
+#support {
+    grid-area: support;
 }
 
 #instagram {
