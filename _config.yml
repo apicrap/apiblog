@@ -1,7 +1,7 @@
 # General
-title: apiblog
+title: Hive Alley Tales
 description: >- # this means to ignore newlines until "baseurl:"
-  Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste lõputult huvitavat maailma koos avastada.
+  Welcome to discover Hive Alley and its Tales. I started this beekeeping blog with the aim of sharing my experiences and thoughts as a beginner beekeeper. Taking my first steps in beekeeping has led me to many questions and ideas, which I want to share with other aspiring beekeepers and enthusiasts. Together, let's explore the endlessly fascinating world of bees.
 github_username: apicrap
 # Serving
 # domain: karjetanav.eu
@@ -18,23 +18,45 @@ sass:
   style: expanded
   #load_paths:
   #- "."
+language_default: et
+
 defaults:
   - scope:
-      path: _posts # "" means all files in the project
+      path: "_pages/en"
+    values:
+      language: "en"
+  - scope:
+      path: "_pages/et"
+    values:
+      language: "et"
+  - scope:
+      path: "_posts/en"
       type: "posts"
     values:
-      is_post: true
-      layout: "post"
-  #- scope:
-  #    type: pages
-  #    path: _pages
-  #  values:
-  #    is_post: false
-  #    layout: default
-  # - scope:
-  #    path: "assets/images"
-  #  values:
-  #    image: true
+      permalink: "/:title"
+      language: en
+      excerpt_separator: "<!--more-->"
+  - scope:
+      path: "_posts/et"
+      type: "posts"
+    values:
+      permalink: "/:title"
+      language: et
+      excerpt_separator: "<!--rohkem-->"
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+feed:
+  path: "/feed/et.xml"
+  tags:
+    path: "/feed/"
+    only:
+      - et
+      - en
+  posts_limit: 20
+  disable_in_development: true
+
 include: [_pages]
 markdown: kramdown
 

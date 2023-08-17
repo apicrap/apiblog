@@ -2,7 +2,7 @@
 layout: default
 ---
 <div id="posts">
-    {% assign reversed_posts = site.posts | reverse %}
+    {% assign reversed_posts = site.posts | where: "language", page.language | reverse %}
     {% for post in reversed_posts %}
     {{post}}
     {% endfor %}

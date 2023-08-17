@@ -1,0 +1,61 @@
+back:
+  en: Back to the Top
+  et: Tagasi üles
+
+top:
+  en: Top
+  et: Üles
+
+index:
+  en: Index
+  et: Sisukord
+
+about:
+  en: About the Blog
+  et: Blogist
+
+author:
+  en: Author
+  et: Autor
+
+content:
+  human:
+    en: Human-created content
+    et: Inimloodud sisu
+  ai:
+    en: AI-generated content
+    et: AI genereeritud sisu
+
+category:
+  en: Post categories
+  et: Postituse kategooriad
+
+tags:
+  en: Tags
+  et: Sildid
+
+languages:
+  en:
+    value: English
+    slug: en
+    code: en_UK
+  et:
+    value: Eesti
+    slug: et
+    code: et_EE
+
+title:
+  en: Hive Alley Tales
+  et: Kärjetänava lood
+
+coffee:
+  en: Buy Me a Coffee
+  et: Osta mulle kohv
+
+mode:
+  en: Light / Dark mode
+  et: Hele / tume taust
+
+lang_switch:
+  en: Switch language (Estonian / English)
+  et: Vaheta keelt (eesti / inglise)

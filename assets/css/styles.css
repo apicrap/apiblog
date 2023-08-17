@@ -55,7 +55,7 @@ body {
   width: 100%;
   display: grid;
   height: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Roboto Mono", monospace;
   overflow: hidden;
   grid-template-columns: auto;
   overscroll-behavior-y: auto;
@@ -103,6 +103,10 @@ p {
   font-size: 1.2rem;
 }
 
+li {
+  font-size: 1.2rem;
+}
+
 a {
   text-decoration: none;
   color: rgb(196, 70, 43);
@@ -141,6 +145,9 @@ a {
 .dark-mode main {
   background-color: rgb(17, 17, 32);
   color: rgb(134, 157, 184);
+}
+.dark-mode main a.bmc-btn {
+  color: black;
 }
 
 #go-to-top {
@@ -235,12 +242,78 @@ header {
   vertical-align: middle;
 }
 
-@media only screen and (max-width: 768.999px) and (orientation: landscape) {
+#support svg {
+  height: 42.54px;
+  width: auto;
+  vertical-align: middle;
+}
+
+#homepage-link {
+  white-space: normal;
+}
+
+.keep-together {
+  white-space: nowrap;
+  display: inline;
+}
+
+@media only screen and (max-width: 355px) and (orientation: portrait) {
   header {
     display: grid;
-    grid-template-columns: 22px 2rem auto auto 22px;
+    grid-template-columns: 22px 2rem auto auto 80px auto 22px;
+    grid-template-rows: 80px 22px;
+    grid-template-areas: ". showMenu homepage-link homepage-link lang-switch mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar progress-bar progress-bar flower";
+  }
+  #showSidebar {
+    display: block;
+  }
+  #social {
+    display: none;
+  }
+  #lang-switch {
+    display: inline-block;
+  }
+  #support {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) and (orientation: portrait) {
+  header .letter {
+    font-size: 12px;
+  }
+  header #homepage-link {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 355px) and (orientation: portrait) {
+  header {
+    display: grid;
+    grid-template-columns: 22px 2rem auto auto 110px auto 22px;
+    grid-template-rows: 80px 22px;
+    grid-template-areas: ". showMenu homepage-link homepage-link lang-switch mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar progress-bar progress-bar flower";
+  }
+  header .letter {
+    font-size: clamp(16px, 2.5vw, 40px);
+  }
+  #showSidebar {
+    display: block;
+  }
+  #social {
+    display: none;
+  }
+  #lang-switch {
+    display: inline-block;
+  }
+  #support {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  header {
+    display: grid;
+    grid-template-columns: 22px 2rem auto auto auto auto auto 22px;
     grid-template-rows: 22px;
-    grid-template-areas: "bee-hive progress-bar progress-bar progress-bar flower";
+    grid-template-areas: "bee-hive progress-bar progress-bar progress-bar progress-bar progress-bar progress-bar flower";
   }
   #showSidebar {
     display: block;
@@ -258,31 +331,34 @@ header {
   #social {
     display: none;
   }
+  #lang-switch {
+    display: none;
+  }
+  #support {
+    display: none;
+  }
 }
-@media only screen and (max-width: 768.999px) and (orientation: portrait) {
+@media only screen and (min-width: 550px) and (orientation: portrait) {
   header {
     display: grid;
-    grid-template-columns: 22px 2rem auto auto 22px;
+    grid-template-columns: 22px 2rem auto auto 110px auto 22px;
     grid-template-rows: 80px 22px;
-    grid-template-areas: ". showMenu homepage-link mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar flower";
-  }
-  #showSidebar {
-    display: block;
-  }
-  #social {
-    display: none;
+    grid-template-areas: ". showMenu homepage-link homepage-link lang-switch mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar progress-bar progress-bar flower";
   }
   #homepage-link {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 }
-@media only screen and (min-width: 768.999px) {
+@media only screen and (min-width: 768px) {
   header {
     display: grid;
-    grid-template-columns: 22px auto 15% 15% 22px;
+    grid-template-columns: 22px auto 160px 150px 5% 8% 22px;
     grid-template-rows: minmax(80px, 4rem) 22px;
-    grid-template-areas: "homepage-link homepage-link social mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar flower";
+    grid-template-areas: "homepage-link homepage-link social lang-switch support mode-switch-wrapper ." "bee-hive progress-bar progress-bar progress-bar progress-bar progress-bar flower";
+  }
+  header .letter {
+    font-size: clamp(16px, 3.5vw, 40px);
   }
   #social {
     grid-area: social;
@@ -293,6 +369,9 @@ header {
   }
   #showSidebar {
     display: none;
+  }
+  #lang-switch {
+    display: inline-block;
   }
 }
 header a,
@@ -355,6 +434,14 @@ header a,
   grid-area: homepage-link;
 }
 
+#lang-switch {
+  grid-area: lang-switch;
+}
+
+#support {
+  grid-area: support;
+}
+
 #instagram {
   grid-area: instagram;
 }
@@ -381,6 +468,8 @@ header a,
 .scroll-progress-container {
   grid-area: progress-bar;
   width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   background-image: linear-gradient(140deg, rgb(234, 222, 219) 0%, rgb(188, 112, 164) 50%, rgb(235, 228, 165) 75%);
 }
 
@@ -411,6 +500,240 @@ header a,
   z-index: 5;
 }
 
+@media only screen and (max-width: 355px) {
+  .switch {
+    position: relative;
+    display: inline-block;
+  }
+  .switch span {
+    position: absolute;
+    top: 2px;
+    width: 50%;
+    text-align: center;
+    pointer-events: none;
+    font-size: 10px;
+    padding: 2px;
+    text-shadow: none;
+  }
+  .switch span.est {
+    color: white;
+    left: 6px;
+  }
+  .switch span.eng {
+    color: rgb(17, 17, 32);
+    right: 6px;
+  }
+  .checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  input.checkbox:checked ~ .eng {
+    color: white;
+  }
+  input.checkbox:checked ~ .est {
+    color: rgb(17, 17, 32);
+  }
+  .checkbox + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  input.checkbox + label {
+    width: 60px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 30px;
+    background-color: rgb(236, 183, 35);
+    margin: 0 auto 0 auto;
+  }
+  input.checkbox + label:before,
+  input.checkbox + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+  }
+  input.checkbox + label:before {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(235, 228, 165);
+    border-radius: 30px;
+  }
+  input.checkbox + label:after {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(72, 197, 124);
+    width: 30px;
+    border-radius: 30px;
+    transition: margin 0.5s;
+  }
+  input.checkbox:checked + label:after {
+    margin-left: 26px;
+  }
+}
+@media only screen and (min-width: 355px) {
+  .switch {
+    position: relative;
+    display: inline-block;
+  }
+  .switch span {
+    position: absolute;
+    top: 2px;
+    width: 50%;
+    text-align: center;
+    pointer-events: none;
+    font-size: 1rem;
+    padding: 2px;
+    text-shadow: none;
+  }
+  .switch span.est {
+    color: white;
+    left: 2px;
+  }
+  .switch span.eng {
+    color: rgb(17, 17, 32);
+    right: 2px;
+  }
+  .checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  input.checkbox:checked ~ .eng {
+    color: white;
+  }
+  input.checkbox:checked ~ .est {
+    color: rgb(17, 17, 32);
+  }
+  .checkbox + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  input.checkbox + label {
+    width: 90px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 45px;
+    background-color: rgb(236, 183, 35);
+    margin: 0 auto 0 auto;
+  }
+  input.checkbox + label:before,
+  input.checkbox + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+  }
+  input.checkbox + label:before {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(235, 228, 165);
+    border-radius: 45px;
+  }
+  input.checkbox + label:after {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(72, 197, 124);
+    width: 45px;
+    border-radius: 45px;
+    transition: margin 0.5s;
+  }
+  input.checkbox:checked + label:after {
+    margin-left: 40px;
+  }
+}
+@media only screen and (min-width: 550px) {
+  .switch {
+    position: relative;
+    display: inline-block;
+  }
+  .switch span {
+    position: absolute;
+    top: 5px;
+    width: 50%;
+    text-align: center;
+    pointer-events: none;
+    font-size: 1.2rem;
+    padding: 2px;
+    text-shadow: none;
+  }
+  .switch span.est {
+    color: white;
+    left: 6px;
+  }
+  .switch span.eng {
+    color: rgb(17, 17, 32);
+    right: 6px;
+  }
+  .checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  input.checkbox:checked ~ .eng {
+    color: white;
+  }
+  input.checkbox:checked ~ .est {
+    color: rgb(17, 17, 32);
+  }
+  .checkbox + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  input.checkbox + label {
+    width: 120px;
+    height: 40px;
+    padding: 2px;
+    border-radius: 60px;
+    background-color: rgb(236, 183, 35);
+    margin: 0 auto 0 auto;
+  }
+  input.checkbox + label:before,
+  input.checkbox + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+  }
+  input.checkbox + label:before {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(235, 228, 165);
+    border-radius: 60px;
+  }
+  input.checkbox + label:after {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgb(72, 197, 124);
+    width: 60px;
+    border-radius: 60px;
+    transition: margin 0.5s;
+  }
+  input.checkbox:checked + label:after {
+    margin-left: 56px;
+  }
+}
 /*Header and footer background*/
 /* Dark mode main text color only*/
 /* Dark mode background*/
@@ -429,11 +752,26 @@ header a,
   flex-direction: column-reverse;
 }
 #posts article p {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Roboto Mono", monospace;
   margin-bottom: 1rem;
 }
 #posts article h3 {
   margin-bottom: 0.8rem;
+}
+#posts article ul,
+#posts article ol {
+  margin-bottom: 1rem;
+}
+#posts article li {
+  font-family: "Roboto Mono", monospace;
+  list-style-position: inside;
+}
+#posts article ol li {
+  margin-bottom: 1rem;
+}
+#posts article #support-post svg {
+  width: 136.25px;
+  height: auto;
 }
 
 .post-metadata p,
@@ -457,7 +795,8 @@ img.post-image-regular:hover {
   height: auto;
 }
 
-img.post-image-small {
+img.post-image-small,
+img.post-image-smalldesk-regularmob {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -465,7 +804,8 @@ img.post-image-small {
   height: auto;
   transition: width 1s ease-in;
 }
-img.post-image-small:hover {
+img.post-image-small:hover,
+img.post-image-smalldesk-regularmob:hover {
   width: 40%;
   height: auto;
 }
@@ -514,7 +854,8 @@ img.hero-image {
 }
 
 @media only screen and (max-width: 768.999px) {
-  img.post-image-regular {
+  img.post-image-regular,
+  img.post-image-smalldesk-regularmob {
     width: 100%;
     height: auto;
   }
@@ -584,6 +925,12 @@ img.hero-image {
   color: rgb(96, 53, 64);
   line-height: 22px;
   margin-bottom: 8px;
+}
+#sidebar #social-block #coffee svg {
+  display: block;
+  height: 42.54px;
+  width: auto;
+  margin: 12px auto 0 auto;
 }
 #sidebar #rss-feed-sidebar {
   font-size: 21.27px;
