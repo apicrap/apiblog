@@ -19,22 +19,7 @@
     <meta name="author" content="apicrap">
     <meta name="developer" content="devKarin">
 
-    {% if page.language == "en" %}
-    <meta name="application-name" content="Apicrap beekeeping blog">
-    <meta name="description" content="Beekeeping blog for beginners and for advanced beekeepers.">
-    <meta property="og:title" content="Hive Alley Tales" />
-    <meta property="og:description" content="Beekeeping blog for beginners and for advanced beekeepers." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/en" />
-    <meta property="og:locale" content="en_UK" />
-    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/K2rjet2nav_2.webp" />
-    <meta property="og:image:type" content="image/webp" />
-    <meta property="og:image:width" content="1411" />
-    <meta property="og:image:height" content="1412" />
-    <meta property="og:image:alt" content="Mesilased kärjetänaval" />
-    <meta name="keywords"
-        content="beekeeping, bees, beekeeper, beekeeping products, beekeeping techniques, beekeeping tips, hive management, honey production, beginner beekeeping, beekeeping guide, hobby beekeeping, blog">
-    {% else %}
+    {% if page.language == "et" %}
     <meta name="application-name" content="Apicrap mesindusblogi">
     <meta name="description" content="Mesindusblogi nii algajale hobimesinikule kui ka kogenud mesinikele.">
     <meta property="og:title" content="Kärjetänava lood" />
@@ -49,6 +34,22 @@
     <meta property="og:image:alt" content="Mesilased kärjetänaval" />
     <meta name="keywords"
         content="mesindus, mesilased, mesinik, mesindussaadused, mesindusvõtted, hobimesinik, algaja mesinik, blogi">
+
+    {% else %}
+    <meta name="application-name" content="Apicrap beekeeping blog">
+    <meta name="description" content="Beekeeping blog for beginners and for advanced beekeepers.">
+    <meta property="og:title" content="Hive Alley Tales" />
+    <meta property="og:description" content="Beekeeping blog for beginners and for advanced beekeepers." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/en" />
+    <meta property="og:locale" content="en_UK" />
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/K2rjet2nav_2.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1411" />
+    <meta property="og:image:height" content="1412" />
+    <meta property="og:image:alt" content="Mesilased kärjetänaval" />
+    <meta name="keywords"
+        content="beekeeping, bees, beekeeper, beekeeping products, beekeeping techniques, beekeeping tips, hive management, honey production, beginner beekeeping, beekeeping guide, hobby beekeeping, blog">
     {% endif %}
 
     <link rel="alternate" hreflang="en" type="application/atom+xml" title="{{ snippets['en'] }}" href={{"/feed/en.xml" |
@@ -71,11 +72,12 @@
 </head>
 
 <body id="main-body">
-    <noscript>See leht kasutab JavaScripti mitmete kasutusfunktsioonide võimaldamiseks, sh näiteks sisukorra kuvamiseks.
-        Keelates skriptimise, ei ole leht sirvimiskõlbulik.</noscript>
     <noscript>This page uses JavaScript to enable a number of
         usability features, including displaying the table of contents.
         Disabling scripting makes the page unbrowsable.</noscript>
+    <noscript>See leht kasutab JavaScripti mitmete kasutusfunktsioonide võimaldamiseks, sh näiteks sisukorra kuvamiseks.
+        Keelates skriptimise, ei ole leht sirvimiskõlbulik.</noscript>
+
 
     {% include navigation.html %}
 
@@ -83,20 +85,20 @@
         <div class="blog-description">
             <h1 id="blog-heading">{{ snippets.about[page.language] }}</h1>
 
-            {% if page.language == "en" %}
+            {% if page.language == "et" %}
+            <p>Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda
+                kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid
+                tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste
+                lõputult huvitavat maailma koos avastada.</p>
+            <p class="sirv">Head sirvimist!</p>
+
+            {% else %}
             <p>Welcome to discover the world of Hive Alley and its interesting Tales. I started this beekeeping blog to
                 share my experiences and thoughts as someone new to beekeeping. As I've taken my first steps in
                 beekeeping, I've had many questions and ideas that I want to share with other beginners and people who
                 are curious, so that together we can explore the amazing world of bees.</p>
             <p class="sirv">Enjoy your browsing!</p>
 
-            {% else %}
-
-            <p>Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda
-                kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid
-                tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste
-                lõputult huvitavat maailma koos avastada.</p>
-            <p class="sirv">Head sirvimist!</p>
             {% endif %}
 
         </div>
