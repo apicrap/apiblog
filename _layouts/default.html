@@ -1,5 +1,10 @@
+---
+---
 <!DOCTYPE html>
-<html lang="et">
+
+{% assign snippets = site.data.snippets %}
+
+<html lang="{{page.language}}">
 
 <head>
     {% if jekyll.environment == "production" %}
@@ -7,30 +12,58 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-848L5ZETJ0"></script>
     <script src="{{ site.baseurl }}assets/js/google_analytics_script.js"></script>
     {% endif %}
-    <title>{{ page.title }}</title>
+
+    <title>{{ snippets.title[page.language] }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="application-name" content="Apicrap mesindusblogi">
     <meta name="author" content="apicrap">
     <meta name="developer" content="devKarin">
-    <meta name="description" content="Mesindusblogi nii algajale hobimesinikule kui ka kogenud mesinikele.">
-    <meta property="og:title" content="Kärjetänava lood" />
-    <meta property="og:description" content="Mesindusblogi nii algajale hobimesinikule kui ka kogenud mesinikele." />
+
+    {% if page.language == "en" %}
+    <meta name="application-name" content="Apicrap beekeeping blog">
+    <meta name="description" content="Beekeeping blog for beginners and for advanced beekeepers.">
+    <meta property="og:title" content="Hive Alley Tales" />
+    <meta property="og:description" content="Beekeeping blog for beginners and for advanced beekeepers." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ site.url }}" />
-    <meta property="og:locale" content="et_EE" />
-    <meta property="og:image" content="{{ site.baseurl }}assets/images/K2rjet2nav_2.webp" />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/en" />
+    <meta property="og:locale" content="en_UK" />
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/K2rjet2nav_2.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1411" />
     <meta property="og:image:height" content="1412" />
     <meta property="og:image:alt" content="Mesilased kärjetänaval" />
-    <meta name="keywords" content="mesindus mesilased mesinik mesindussaadused mesindusvõtted hobimesinik">
-    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml" target="_blank">
-    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}assets/favicon/favicon.ico">
+    <meta name="keywords"
+        content="beekeeping, bees, beekeeper, beekeeping products, beekeeping techniques, beekeeping tips, hive management, honey production, beginner beekeeping, beekeeping guide, hobby beekeeping, blog">
+    {% else %}
+    <meta name="application-name" content="Apicrap mesindusblogi">
+    <meta name="description" content="Mesindusblogi nii algajale hobimesinikule kui ka kogenud mesinikele.">
+    <meta property="og:title" content="Kärjetänava lood" />
+    <meta property="og:description" content="Mesindusblogi nii algajale hobimesinikule kui ka kogenud mesinikele." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/et" />
+    <meta property="og:locale" content="et_EE" />
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/K2rjet2nav_2.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1411" />
+    <meta property="og:image:height" content="1412" />
+    <meta property="og:image:alt" content="Mesilased kärjetänaval" />
+    <meta name="keywords"
+        content="mesindus, mesilased, mesinik, mesindussaadused, mesindusvõtted, hobimesinik, algaja mesinik, blogi">
+    {% endif %}
+
+    <link rel="alternate" hreflang="en" type="application/atom+xml" title="{{ snippets['en'] }}" href={{"/feed/en.xml" |
+        relative_url }} target="_blank">
+    <link rel="alternate" hreflang="et" type="application/atom+xml" title="{{ snippets['et'] }}" href={{"/feed/et.xml" |
+        relative_url }} target="_blank">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/{{snippets.languages['en'].slug }}/" />
+    <link rel="alternate" hreflang="et" href="{{ site.url }}{{ site.baseurl }}/{{snippets.languages['et'].slug }}/" />
+    <link rel="icon" type="image/x-icon" href={{ "assets/favicon/favicon.ico" | relative_url }}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href={{ "/assets/css/styles.css" | relative_url }}>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={{ "assets/css/styles.css" | relative_url }}>
+
     {% if jekyll.environment == "production" %}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6329095806651182"
         crossorigin="anonymous"></script>
@@ -40,23 +73,45 @@
 <body id="main-body">
     <noscript>See leht kasutab JavaScripti mitmete kasutusfunktsioonide võimaldamiseks, sh näiteks sisukorra kuvamiseks.
         Keelates skriptimise, ei ole leht sirvimiskõlbulik.</noscript>
+    <noscript>This page uses JavaScript to enable a number of
+        usability features, including displaying the table of contents.
+        Disabling scripting makes the page unbrowsable.</noscript>
+
     {% include navigation.html %}
+
     <main id="blog-main">
         <div class="blog-description">
-            <h1 id="blog-heading">Blogist</h1>
+            <h1 id="blog-heading">{{ snippets.about[page.language] }}</h1>
+
+            {% if page.language == "en" %}
+            <p>Welcome to discover the world of Hive Alley and its interesting Tales. I started this beekeeping blog to
+                share my experiences and thoughts as someone new to beekeeping. As I've taken my first steps in
+                beekeeping, I've had many questions and ideas that I want to share with other beginners and people who
+                are curious, so that together we can explore the amazing world of bees.</p>
+            <p class="sirv">Enjoy your browsing!</p>
+
+            {% else %}
+
             <p>Tere tulemast kärjetänavaid ja selle lugusid uudistama. Lõin selle mesindusblogi eesmärgiga jagada enda
                 kogemusi ja mõtteid algaja mesinikuna. Mesinduses esimesi samme tehes on mul palju küsimusi ning mõtteid
                 tekkinud, mida soovin ka teiste mesinikukandidaatidega ja lihtsalt huvilistega jagada, et koos mesilaste
                 lõputult huvitavat maailma koos avastada.</p>
-            <p>Head sirvimist!</p>
+            <p class="sirv">Head sirvimist!</p>
+            {% endif %}
+
         </div>
         <div id="blog-content" class="content">
+
             {{ content }}
+
             {% include sidebar.html %}
+
         </div>
-        <button id="go-to-top" title="Tagasi üles" onclick="goBackToTop()">&#8679;</button>
+        <button id="go-to-top" title="{{ snippets.back[page.language] }}" onclick="goBackToTop()">&#8679;</button>
     </main>
+
     {% include scripts.html %}
+
 </body>
 
 </html>

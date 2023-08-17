@@ -1,0 +1,13 @@
+<div id="lang-switch" class="switch" title="{{ site.data.snippets.lang_switch[page.language] }}" oninput=switchLang()
+    location="">
+    {% if page.language == "en" %}
+    <input id="language-toggle" type="checkbox" class="checkbox" data-url="{{page.url | absolute_url}}"
+        data-lang="{{page.language}}" checked>
+    {% else %}
+    <input id="language-toggle" type="checkbox" class="checkbox" data-url="{{page.url | absolute_url}}"
+        data-lang="{{page.language}}">
+    {% endif %}
+    <label for="language-toggle" class="toggle"></label>
+    <span class="est">EST</span>
+    <span class="eng">ENG</span>
+</div>

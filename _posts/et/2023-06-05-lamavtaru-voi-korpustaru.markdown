@@ -1,11 +1,15 @@
 ---
+layout: post
 time: 05.06.2023 14:15
 author: apicrap
+language: et
+language_reference: taru
 title:  "Lamavtaru või korpustaru"
+published: true
 human_generated: 100%
 ai_generated: 0%
-categories: inventar
-tags: lamavtaru korpustaru
+categories: ["inventar"]
+tags: ["lamavtaru", "korpustaru", "et"]
 compare_1: assets/images/Lamavtaru2.webp
 compare_2: assets/images/Lamavtaru1.webp
 alt_compare_1: "Lamavtaru pärast uuenduskuuri"
@@ -14,11 +18,14 @@ compare_caption: "Lamavtaru uuenduskuur"
 compare_author: "apicrap"
 picture_date_compare: "juuni 2023"
 picture_date1: 05.06.2023
+image: "{{site.baseurl}}/assets/images/Korpustaru1.webp"
 ---
+
 Selleks, et mesilasi pidada on neil tarvis pisut ruumi, kuhu nad oma pesa saaksid hakata ehitama. Aga milline see ruum olema peaks? Minule meenus enne mesindusega lähemalt tutvumist esimese ja ainsana pilt lapsepõlvest, kui mesilased elasid justkui vanaema kineskoobiga televiisori suurustes puidust kastides ning selle alumisest servast sisse-välja lendlesid. Tuleb välja, et need suured kastid võib ühisnimetajana kokku võtta, kui lamavtaru. Miks nimetatakse lamavtarusid just nõnda, seda ma täpselt järele uurinud ei ole, aga mulle on alati meeldinud mõelda, et see nimi tuleb sellest, et need tarud lihtsalt pikutavad aias muru sees, suud ammuli ja ootavad, millal mesilased neile otse kõhtu lendavad. Seega, enamasti on lamavtarud suhteliselt statsionaarsed, sest nad on rasked ja piisavalt suured ning keegi neid ringi lohistada ei jaksa. Kui eesmärk pole mesindust suurelt ette võtta ning soov on oma koduaeda lihtsalt mõne nostalgiahõngulise elemendiga rikastada, sobibki mesilasi pidada lamavtarus.<br>
+<!--rohkem-->
 
 <figure>
-<img alt="Suure teleri tassimine" src="{{site.baseurl}}assets/images/Lamavtaru_kui_teler.webp" title="Lamavtaru liigutamine on kui suure teleri tassimine" class="post-image-small" width="312" height="261" />
+<img alt="Suure teleri tassimine" src="{{site.baseurl}}/assets/images/Lamavtaru_kui_teler.webp" title="Lamavtaru liigutamine on kui suure teleri tassimine" class="post-image-small" width="312" height="261" />
 <figcaption>Lamavtaru liigutamine on kui suure teleri tassimine&#8194;Autor: tundmatu</figcaption>
 </figure>
 Kui tahta mesilasi lamavtarudesse majutada, on esimene väljakutse kõigepealt musklit punnitada, et tarul katus maha saada. Taru katused võivad olenevalt materjalist kaaluda 10 - 15 kg. Kui oled katuse maha saanud, komistad sa soojustuse otsa, mis on kärgede peale paigutatud mesilaste ületalve aitamiseks ning kevadel haudme soojas hoidmiseks. Kui oled tarud päranduseks saanud, võib selleks soojustuseks olla ka vanaema mõni vana kasukas. Kahjuks see mummidele enamasti selga ei istu või eelistavad moodsad mummid juba uusimaid trende. Kui ka see takistus on ületatud võib märgata juba ka kärjeraame. Lamavtarus käib kärgede lisamine horisontaalselt, üksteise kõrvale, ning lõputult seda teha ei saa sest seinad tulevad ette. Sellepärast on lamavtarud suure tootmisotstarbelise mesila jaoks ebamugavad - mesinik peab olema väga hoolas ja nutikas, et mesilased ruumipuuduses ei vaevleks ja suudaks tööd teha.<br>
@@ -31,7 +38,7 @@ Kui kodu ümbruses sobivat asukohta mesilaste pidamiseks pole, aga soov mesindus
 
 <figure>
 
-<img alt="Korpustaru" src="{{site.baseurl}}assets/images/Korpustaru1.webp" title="Korpustaru" class="post-image-regular" width="728" height="410" />
+<img alt="Korpustaru" src="{{site.baseurl}}/assets/images/Korpustaru1.webp" title="Korpustaru" class="post-image-regular" width="728" height="410" />
 <figcaption>Näide korpustarust juuni alguses&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 Kuna mulle isiklikult tundub ka korpustega majandamine mugavam ja loogilisem, siis mõnes järgnevas postituses kavatsen selle teema natuke põhjalikumalt läbi võtta. Kirjutan, millised korpused on olemas ja millised raamid nende sisse käivad.<br>

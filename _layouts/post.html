@@ -1,42 +1,51 @@
 ---
 ---
-<article id={{page.id}}>
-    <h2 id=post-heading-{{page.id}}>{{ page.title | capitalize }}</h2>
+{% assign snippets = site.data.snippets %}
+
+<article id="{{page.slug}}">
+    <h2 id=post-heading-{{page.slug}}>{{ page.title | capitalize }}</h2>
     <div class="post-metadata">
-        <p>{{ page.time }} - Autor: {{ page.author | capitalize }}</p>
-        <p><span>Inimtoodetud sisu: {{page.human_generated}},&#8194;AI genereeritud sisu: {{page.ai_generated}}</p>
-        <p>Postituse kategooriad:
+        <p>{{ page.time }} - {{ snippets.author[page.language] }}: {{ page.author | capitalize }}</p>
+        <p><span>{{ snippets.content.human[page.language] }}: {{page.human_generated}},&#8194;{{
+                snippets.content.ai[page.language] }}:
+                {{page.ai_generated}}</p>
+        <p>{{ snippets.category[page.language] }}:
             {% for category in page.categories %}
             <span> {{category}} </span>
             {% endfor %}
         </p>
-        <p>Sildid:
+        <p>{{ snippets.tags[page.language] }}:
             {% for tag in page.tags %}
-            <span> {{tag}} </span>
+            <span> #{{tag}} </span>
             {% endfor %}
         </p>
     </div>
+
     {% if page.hero %}
-    <img class="hero-image" src="{{site.baseurl}}{{page.hero}}">
+    <img class="hero-image" src="{{site.baseurl}}/{{page.hero}}">
     {% endif %}
 
     {% if page.compare_1 %}
     <div class="comparison-container">
         <figure>
             <div class="comparison-img">
-                <img src="{{site.baseurl}}{{page.compare_1}}" width="534" height="300" alt="{{page.alt_compare_1}}">
+                <img src="{{site.baseurl}}/{{page.compare_1}}" width="534" height="300" alt="{{page.alt_compare_1}}">
             </div>
             <div class="comparison-img comparison-overlay">
-                <img src="{{site.baseurl}}{{page.compare_2}}" width="534" height="300" alt="{{page.alt_compare_2}}">
+                <img src="{{site.baseurl}}/{{page.compare_2}}" width="534" height="300" alt="{{page.alt_compare_2}}">
             </div>
             <figcaption>
-                {{page.compare_caption}}&#8194;Autor: {{page.compare_author}} {{page.picture_date_compare}}
+                {{page.compare_caption}}&#8194;{{ snippets.author[page.language] }}: {{page.compare_author}}
+                {{page.picture_date_compare}}
             </figcaption>
         </figure>
     </div>
     {% endif %}
-    <p>{{content}}</p>
-    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button"
-        data-slug="k2rjet2nav" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee"
-        data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+
+    {{content }}
+
+    <div id="support-btn-post">
+        <a id="support-post" href="https://www.buymeacoffee.com/k2rjet2nav" target="_blank">{% include bmc-button.svg
+            %}</a>
+    </div>
 </article>
