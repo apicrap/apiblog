@@ -1,18 +1,17 @@
 const LANG_SWITCH = document.querySelector("#language-toggle");
 let lang = window.location.pathname;
 
-
 if (lang === "/") {
     window.location.assign(document.URL + "en/")
     LANG_SWITCH.checked = false;
 }
 
 function switchLang() {
-    const currentLocation = window.location.toString().replace(LANG_SWITCH.dataset.url, "").replace("/#", "#");
+    const currentLocation = window.location.hash;
     const referenceMenuItem = document.querySelector("#sidebar-list a[href='" + currentLocation + "']");
     const newLocation = referenceMenuItem?.getAttribute("alternate-ref") ?? "";
     const cleanedNewLocation = newLocation === "#" ? "" : newLocation;
-    let newUrl = (currentLocation === "/" || currentLocation === "") ? window.location.toString() : window.location.toString().replace(currentLocation, cleanedNewLocation);
+    let newUrl = (currentLocation === "/" || currentLocation === "") ? window.location.href : window.location.href.replace(currentLocation, cleanedNewLocation);
     let redir = LANG_SWITCH.checked && lang !== "/en/" || !LANG_SWITCH.checked && lang !== "/et/";
 
     if (redir && lang === "/et/") {

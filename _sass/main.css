@@ -769,7 +769,7 @@ header a,
 #posts article ol li {
   margin-bottom: 1rem;
 }
-#posts article #support-post svg {
+#posts article #support-btn-post a svg {
   width: 136.25px;
   height: auto;
 }
