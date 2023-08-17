@@ -2,30 +2,7 @@
 
 <header class="dark-geen-bg">
     <button id="showSidebar" class="" title="Näita sisukorda" onclick="showSidebar()">≡</button>
-    {% if page.language == "en" %}
-    <a id="homepage-link" href="{{site.baseurl}}#blog-heading">
-        <div class="keep-together">
-            <span class="letter">H</span>
-            <span class="letter">i</span>
-            <span class="letter">v</span>
-            <span class="letter">e</span><span>&ensp;</span>
-        </div>
-        <div class="keep-together">
-            <span class="letter">A</span>
-            <span class="letter">l</span>
-            <span class="letter">l</span>
-            <span class="letter">e</span>
-            <span class="letter">y</span><span>&ensp;</span>
-        </div>
-        <div class="keep-together">
-            <span class="letter">T</span>
-            <span class="letter">a</span>
-            <span class="letter">l</span>
-            <span class="letter">e</span>
-            <span class="letter">s</span>
-        </div>
-    </a>
-    {% else %}
+    {% if page.language == "et" %}
     <a id="homepage-link" href="{{site.baseurl}}#blog-heading">
         <div class="keep-together">
             <span class="letter">K</span>
@@ -47,32 +24,60 @@
             <span class="letter">d</span>
         </div>
     </a>
-    {% endif %}
-
-    <div id="social">
-        <a id="instagram" href="https://instagram.com/k2rjet2navalood?igshid=ZGUzMzM3NWJiOQ==" rel="author"
-            title="Instagram" target="_blank">
-            {% include instagram_logo_light.svg %}
-        </a>
-        <a id="message" href="https://ig.me/m/k2rjet2navalood" rel="author" title="Instagram messenger" target="_blank">
-            {% include envelope_light.svg %}
-        </a>
-        {% if page.language == "en" %}
-        <a id="rss-feed-link" rel="alternate" href={{"/feed/en.xml" | relative_url }} type="application/atom+xml"
-            title="{{ snippets.title[page.language] }}" target="_blank">RSS</a>
+    {% else %}
+    {% if page.url == "/404.html" %}
+    <a id="homepage-link" href="{{site.url}}{{site.baseurl}}/en#blog-heading">
         {% else %}
-        <a id="rss-feed-link" rel="alternate" href={{"/feed/et.xml" | relative_url }} type="application/atom+xml"
-            title="{{ snippets.title[page.language] }}" target="_blank">RSS</a>
+        <a id="homepage-link" href="{{site.baseurl}}#blog-heading">
+            {% endif %}
+            <div class="keep-together">
+                <span class="letter">H</span>
+                <span class="letter">i</span>
+                <span class="letter">v</span>
+                <span class="letter">e</span><span>&ensp;</span>
+            </div>
+            <div class="keep-together">
+                <span class="letter">A</span>
+                <span class="letter">l</span>
+                <span class="letter">l</span>
+                <span class="letter">e</span>
+                <span class="letter">y</span><span>&ensp;</span>
+            </div>
+            <div class="keep-together">
+                <span class="letter">T</span>
+                <span class="letter">a</span>
+                <span class="letter">l</span>
+                <span class="letter">e</span>
+                <span class="letter">s</span>
+            </div>
+        </a>
         {% endif %}
-    </div>
-    {% include language_switch.html %}
-    <a id="support" href="https://www.buymeacoffee.com/k2rjet2nav" title="{{ snippets.coffee[page.language] }}"
-        target="_blank">{% include bmc-logo.svg %}</a>
-    <div id="mode-switch-wrapper"><button id="mode-switch" title="{{ snippets.mode[page.language] }}"
-            onclick="darkMode()">&#127769;</button></div>
-    <div id="bee-hive">&#127969;</div>
-    <div class="scroll-progress-container">
-        <div id="progress-bar" class="scroll-progress-bar">&#128029;</div>
-    </div>
-    <div id="flower">&#127802;</div>
+
+        <div id="social">
+            <a id="instagram" href="https://instagram.com/k2rjet2navalood?igshid=ZGUzMzM3NWJiOQ==" rel="author"
+                title="Instagram" target="_blank">
+                {% include instagram_logo_light.svg %}
+            </a>
+            <a id="message" href="https://ig.me/m/k2rjet2navalood" rel="author" title="Instagram messenger"
+                target="_blank">
+                {% include envelope_light.svg %}
+            </a>
+            {% if page.language == "et" %}
+            <a id="rss-feed-link" rel="alternate" href={{"/feed/et.xml" | relative_url }} type="application/atom+xml"
+                title="{{ snippets.title[page.language] }}" target="_blank">RSS</a>
+            {% else %}
+            <a id="rss-feed-link" rel="alternate" href={{"/feed/en.xml" | relative_url }} type="application/atom+xml"
+                title="{{ snippets.title[page.language] }}" target="_blank">RSS</a>
+            {% endif %}
+        </div>
+        {% include language_switch.html %}
+        <a id="support" href="https://www.buymeacoffee.com/k2rjet2nav" title="{{ snippets.coffee[page.language] }}"
+            target="_blank">{% include bmc-logo.svg %}</a>
+        <div id="mode-switch-wrapper"><button id="mode-switch" title="{{ snippets.mode[page.language] }}"
+                onclick="darkMode()">&#127769;</button></div>
+        <div id="bee-hive">&#127969;</div>
+        <div class="scroll-progress-container">
+            <div id="progress-bar" class="scroll-progress-bar">&#128029;</div>
+        </div>
+        <div id="flower">&#127802;</div>
 </header>

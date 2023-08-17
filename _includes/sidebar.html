@@ -3,7 +3,11 @@
 
 <div id="sidebar-container">
     <div id="sidebar">
+        {% if page.url == "/404.html" %}
+        <h3>Index / Sisukord</h3>
+        {% else %}
         <h3>{{ snippets.index[page.language] }}</h3>
+        {% endif %}
         <div id="social-block">
             <p id="copyright">2023 Apicrap</p>
             <a id="instagram-sidebar" href="https://instagram.com/k2rjet2navalood?igshid=ZGUzMzM3NWJiOQ==" rel="author"
@@ -32,8 +36,14 @@
             %}
             {% endif %}
             {% assign altern_slug = page_translations.slug %}
+            {% if page.url == "/404.html" %}
+            <li class="" value={{post.slug}}><a href={{site.url}}{{site.baseurl}}/{{post.language}}#{{post.slug}}
+                    alternate-ref={{site.url}}{{site.baseurl}}/{{post.language}}#{{altern_slug}}>{{post.title}}</a>
+            </li>
+            {% else %}
             <li class="" value={{post.slug}}><a href=#{{post.slug}} alternate-ref=#{{altern_slug}}>{{post.title}}</a>
             </li>
+            {% endif %}
             {% endfor %}
         </ol>
     </div>
