@@ -18,7 +18,7 @@ compare_caption: "Lamavtaru uuenduskuur"
 compare_author: "apicrap"
 picture_date_compare: "juuni 2023"
 picture_date1: 05.06.2023
-image: "{{site.baseurl}}/assets/images/Korpustaru1.webp"
+image: assets/images/Korpustaru1.webp
 ---
 
 Selleks, et mesilasi pidada on neil tarvis pisut ruumi, kuhu nad oma pesa saaksid hakata ehitama. Aga milline see ruum olema peaks? Minule meenus enne mesindusega lähemalt tutvumist esimese ja ainsana pilt lapsepõlvest, kui mesilased elasid justkui vanaema kineskoobiga televiisori suurustes puidust kastides ning selle alumisest servast sisse-välja lendlesid. Tuleb välja, et need suured kastid võib ühisnimetajana kokku võtta, kui lamavtaru. Miks nimetatakse lamavtarusid just nõnda, seda ma täpselt järele uurinud ei ole, aga mulle on alati meeldinud mõelda, et see nimi tuleb sellest, et need tarud lihtsalt pikutavad aias muru sees, suud ammuli ja ootavad, millal mesilased neile otse kõhtu lendavad. Seega, enamasti on lamavtarud suhteliselt statsionaarsed, sest nad on rasked ja piisavalt suured ning keegi neid ringi lohistada ei jaksa. Kui eesmärk pole mesindust suurelt ette võtta ning soov on oma koduaeda lihtsalt mõne nostalgiahõngulise elemendiga rikastada, sobibki mesilasi pidada lamavtarus.<br>

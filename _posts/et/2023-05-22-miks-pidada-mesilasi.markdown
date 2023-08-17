@@ -13,7 +13,7 @@ categories: ["mesilased"]
 tags: ["et"]
 picture_date1: 22.05.2023
 picture_date2: 22.05.2023
-image: "{{site.baseurl}}/assets/images/mesilane2.webp"
+image: assets/images/mesilane2.webp
 ---
 <figure>
 <img alt="Mesilane enelase õiel" src="{{site.baseurl}}/assets/images/mesilane1.webp" title="Mesilane enelase õiel" class="post-image-regular" width="728" height="410" />
