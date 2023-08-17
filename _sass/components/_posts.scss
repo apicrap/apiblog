@@ -8,12 +8,31 @@
 
     article {
         p {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: 'Roboto Mono', monospace;
             margin-bottom: 1rem;
         }
 
         h3 {
             margin-bottom: 0.8rem;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-family: 'Roboto Mono', monospace;
+            list-style-position: inside;
+        }
+
+        ol li {
+            margin-bottom: 1rem;
+        }
+
+        #support-post svg {
+            width: 136.25px;
+            height: auto;
         }
     }
 }
@@ -43,7 +62,8 @@ img.post-image-regular {
     }
 }
 
-img.post-image-small {
+img.post-image-small,
+img.post-image-smalldesk-regularmob {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -102,7 +122,9 @@ img.hero-image {
 }
 
 @media only screen and (max-width: 768.999px) {
-    img.post-image-regular {
+
+    img.post-image-regular,
+    img.post-image-smalldesk-regularmob {
         width: 100%;
         height: auto;
     }
