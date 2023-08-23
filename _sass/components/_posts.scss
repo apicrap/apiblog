@@ -103,7 +103,6 @@ img.hero-image {
 
     img {
         display: block;
-        vertical-align: middle;
     }
 }
 
@@ -122,6 +121,9 @@ img.hero-image {
 }
 
 @media only screen and (max-width: 768.999px) {
+    #posts {
+        text-align: left;
+    }
 
     img.post-image-regular,
     img.post-image-smalldesk-regularmob {

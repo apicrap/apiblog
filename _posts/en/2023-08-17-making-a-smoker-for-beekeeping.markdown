@@ -14,7 +14,7 @@ picture_date1: 03.06.2023
 image: assets/images/suitsik_watermarked.webp
 ---
 
-### About Smoker
+### About Smokers
 
 The main purpose of a smoker is to produce smoke, which is used to calm bees. Smoke is necessary during beekeeping to prevent bees from becoming aggressive when inspecting their hives. Smoking the bees helps mask the alarm pheromones within the hive, reducing the likelihood of getting stung. When bees sense smoke, they instinctively gorge themselves on honey, preparing for a possible fire and making it harder for them to bend and sting the beekeeper. Therefore, using a smoker helps minimize harmful encounters between bees and the beekeeper.<br>
 
@@ -69,7 +69,7 @@ First, let's start with making the bellows.
 Take the boards and connect them with metal hinges, leaving a small gap between the boards.
 <figure>
 <img alt="Connecting the smoker's bellows boards" src="{{site.baseurl}}/assets/images/suitsik4.webp" title="Connecting the smoker's bellows boards" class="post-image-regular" width="800" height="600" />
-<figcaption>Connecting the smoker's bellows boards&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Connecting the smoker's bellows boards&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -81,7 +81,7 @@ Next, drill a hole in one board for air to flow from the bellows into the chambe
 Drill two more holes above this air hole for the mounting bolts that will secure the bellows to the chamber. Later, you'll need to create similar holes in the smoker's body and ensure alignment with the holes in the bellows.
 <figure>
 <img alt="Air hole and bolt holes in the smoker's bellows boards" src="{{site.baseurl}}/assets/images/suitsik6.webp" title="Air hole and bolt holes in the smoker's bellows boards" class="post-image-regular" width="800" height="600" />
-<figcaption>Air hole and bolt holes in the smoker's bellows boards&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Air hole and bolt holes in the smoker's bellows boards&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -90,7 +90,7 @@ Attach the spring between the bellows boards using a staple gun. <br>
 The spring should be strong enough to fully extend the bellows after compression. I used an old whisk spring, which worked well for the smaller bellows.
 <figure>
 <img alt="Spring for the smoker's bellows" src="{{site.baseurl}}/assets/images/suitsik8.webp" title="Spring for the smoker's bellowsu" class="post-image-regular" width="600" height="800" />
-<figcaption>Spring for the smoker's bellows&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Spring for the smoker's bellows&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -107,7 +107,7 @@ Cut the bellows from the leather using scissors.
 
 <figure>
 <img alt="Cutting leather for the smoker's bellows" src="{{site.baseurl}}/assets/images/suitsik10.webp" title="Cutting leather for the smoker's bellows" class="post-image-regular" width="800" height="600" />
-<figcaption>Cutting leather for the smoker's bellows&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Cutting leather for the smoker's bellows&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -116,7 +116,7 @@ Attach the leather to the edges of the bellows boards using a staple gun.
 
 <figure>
 <img alt="Semi-finished bellows for the smoker" src="{{site.baseurl}}/assets/images/suitsik9.webp" title="Semi-finished bellows for the smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>Semi-finished bellows for the smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Semi-finished bellows for the smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -135,7 +135,7 @@ Take the chosen metal container for the smoker's body and drill holes using a me
 
 <figure>
 <img alt="Holes in the body of the smoker" src="{{site.baseurl}}/assets/images/suitsik3.webp" title="Holes in the body of the smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>Holes in the body of the smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Holes in the body of the smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -144,7 +144,7 @@ Take the bellows with attached bolts, place the bolts into the holes of the smok
 
 <figure>
 <img alt="Attaching the bellows to the body of the smoker" src="{{site.baseurl}}/assets/images/suitsik2.webp" title="Attaching the bellows to the body of the smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>Attaching the bellows to the body of the smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Attaching the bellows to the body of the smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -153,7 +153,7 @@ To ensure that air can easily access the fire chamber from below and prevent the
 
 <figure>
 <img alt="Metal cans for the sieve and body of the smoker" src="{{site.baseurl}}/assets/images/suitsik1.webp" title="Metal cans for the sieve and body of the smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>Metal cans for the sieve and body of the smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Metal cans for the sieve and body of the smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -166,12 +166,12 @@ Cut off the side of the sieve that faces the smoker's air hole. Cutting a curve,
 
 <figure>
 <img alt="Sieve and body of the smoker" src="{{site.baseurl}}/assets/images/suitsik5.webp" title="Sieve and body of the smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>Sieve and body of the smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Sieve and body of the smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 
 <figure>
 <img alt="Sieve in the body of the smoker" src="{{site.baseurl}}/assets/images/suitsik11.webp" title="Sieve in the body of the smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>Sieve in the body of the smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Sieve in the body of the smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -186,7 +186,7 @@ Attach the smoke conduit to the lid. I used an old brass pipe fitting as the smo
 
 <figure>
 <img alt="Installing the conduit on the smoker lid" src="{{site.baseurl}}/assets/images/suitsik7.webp" title="Installing the conduit on the smoker lid" class="post-image-regular" width="800" height="600" />
-<figcaption>Installing the conduit on the smoker lid&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>Installing the conduit on the smoker lid&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 
@@ -195,7 +195,7 @@ Place the lid with the smoke conduit on top of the smoker's body, and your homem
 
 <figure>
 <img alt="DIY smoker" src="{{site.baseurl}}/assets/images/suitsik12.webp" title="DIY smoker" class="post-image-regular" width="800" height="600" />
-<figcaption>DIY smoker&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>DIY smoker&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 </li>
 </ol>
@@ -210,7 +210,7 @@ Note that you should always light the smoker before wearing your beekeeping suit
 
 <figure>
 <img alt="DIY smoker puffing smoke" src="{{site.baseurl}}/assets/images/suitsik_watermarked.webp" title="DIY smoker puffing smoke" class="post-image-smalldesk-regularmob" width="800" height="451" />
-<figcaption>DIY smoker puffing smoke&#8194;Autor: apicrap {{page.picture_date1}}</figcaption>
+<figcaption>DIY smoker puffing smoke&#8194;Author: apicrap {{page.picture_date1}}</figcaption>
 </figure>
 
 Happy experimenting!

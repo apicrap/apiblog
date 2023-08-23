@@ -52,10 +52,10 @@
         content="beekeeping, bees, beekeeper, beekeeping products, beekeeping techniques, beekeeping tips, hive management, honey production, beginner beekeeping, beekeeping guide, hobby beekeeping, blog">
     {% endif %}
 
-    <link rel="alternate" hreflang="en" type="application/atom+xml" title="{{ snippets['en'] }}" href={{"/feed/en.xml" |
-        relative_url }} target="_blank">
-    <link rel="alternate" hreflang="et" type="application/atom+xml" title="{{ snippets['et'] }}" href={{"/feed/et.xml" |
-        relative_url }} target="_blank">
+    <link rel="alternate" hreflang="en" type="application/atom+xml" title="{{ snippets['en'] }}"
+        href="{{ site.url }}{{ site.baseurl }}feed/en.xml" target="_blank">
+    <link rel="alternate" hreflang="et" type="application/atom+xml" title="{{ snippets['et'] }}"
+        href="{{ site.url }}{{ site.baseurl }}feed/et.xml" target="_blank">
     <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}{{snippets.languages['en'].slug }}/" />
     <link rel="alternate" hreflang="et" href="{{ site.url }}{{ site.baseurl }}{{snippets.languages['et'].slug }}/" />
     <link rel="icon" type="image/x-icon" href={{ "assets/favicon/favicon.ico" | relative_url }}>

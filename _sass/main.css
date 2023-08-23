@@ -250,6 +250,8 @@ header {
 
 #homepage-link {
   white-space: normal;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .keep-together {
@@ -769,7 +771,7 @@ header a,
 #posts article ol li {
   margin-bottom: 1rem;
 }
-#posts article #support-btn-post a svg {
+#posts article #support-btn-post svg {
   width: 136.25px;
   height: auto;
 }
@@ -836,7 +838,6 @@ img.hero-image {
 }
 .comparison-img img {
   display: block;
-  vertical-align: middle;
 }
 
 .image-comparison-slider {
@@ -854,6 +855,9 @@ img.hero-image {
 }
 
 @media only screen and (max-width: 768.999px) {
+  #posts {
+    text-align: left;
+  }
   img.post-image-regular,
   img.post-image-smalldesk-regularmob {
     width: 100%;
